@@ -4,19 +4,35 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".SplashScreenActivity"
-            android:label="@string/title_activity_splash_screen"
+            android:name=".views.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.LoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.Inscription1Activity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_inscription1"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.Inscription2Activity"
+            android:label="@string/title_activity_inscription2" >
         </activity>
     </application>
 

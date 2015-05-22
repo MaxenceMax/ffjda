@@ -1,13 +1,9 @@
 <resources>
     <string name="app_name">FFJudo</string>
-    <string name="title_activity_splash_screen">SplashScreenActivity</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_inscription1">Inscription1Activity</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
-
+    <string name="title_activity_login">LoginActivity</string>
 
 
     <!-- Login activity text-->
@@ -15,13 +11,10 @@
     <string name="password">Mot de passe</string>
     <string name="connexion">Connexion</string>
     <string name="__connexion">CONNEXION</string>
-    <string name="envoyer">envoyer</string>
-    <string name="Envoyer">Envoyer</string>
-    <string name="ENVOYER">ENVOYER</string>
     <string name="pas_licencie">Pas encore licencié ?</string>
     <string name="obtenir_compte">Obtenez votre compte licencié</string>
 
-    <!-- Inscription 1-->
+    <!-- Inscription 1-2 -->
     <string name="saisie_nouvelle_licence">Saisie d\'une nouvelle licence</string>
     <string name="__saisie_nouvelle_licence">SAISIE D\'UNE NOUVELLE LICENCE</string>
     <string name="suivant">Suivant</string>
@@ -40,14 +33,10 @@
         <item>Féminin</item>
         <item>Masculin</item>
     </string-array>
+    <string-array name="discipline_arrays">
+        <item>Judo</item>
+        <item>je sais pas </item>
+        <item>autre chose. </item>
+    </string-array>
 
-    <!-- COLORS -->
-    <color name="white">#FFFFFF</color>
-    <color name="blue_clear">#004a73</color>
-    <color name="blue">#00304d</color>
-    <color name="blue_pressed">#028ce0</color>
-    <color name="blue_fede">#4e7fba</color>
-    <color name="red_fede">#c71424</color>
-    <color name="grey">#e8eded</color>
-    <string name="title_activity_inscription2">Inscription2Activity</string>
 </resources>

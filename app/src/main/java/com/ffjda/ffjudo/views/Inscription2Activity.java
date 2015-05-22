@@ -1,51 +1,25 @@
 package com.ffjda.ffjudo.views;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import com.ffjda.ffjudo.R;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-
-public class SplashScreenActivity extends ActionBarActivity {
+public class Inscription2Activity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
-
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                // Timer to end activity after splash duration
-                Timer timer = new Timer();
-                TimerTask task = new TimerTask() {
-                    @Override
-                    public void run() {
-                        launchLoginActivity();
-                    }
-                };
-                timer.schedule(task, 3000);
-            }
-        });
-    }
-
-    private void launchLoginActivity()
-    {
-        Intent loginIntent = new Intent(this,LoginActivity.class);
-        startActivity(loginIntent);
-        finish();
+        setContentView(R.layout.activity_inscription2);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_splash_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_inscription2, menu);
         return true;
     }
 

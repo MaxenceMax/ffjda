@@ -4,11 +4,14 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
   <style name="AppTheme" parent="@style/_AppTheme">
+      <item name="android:windowNoTitle">true</item>
+      <item name="windowActionBar">true</item>
+      <item name="android:windowFullscreen">false</item>
+      <item name="android:windowContentOverlay">@null</item>
 
     <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
     <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right</item>
     <item name="android:textSelectHandle">@drawable/apptheme_text_select_handle_middle</item>
-
   </style>
 
 </resources>
