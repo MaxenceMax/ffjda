@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -35,6 +36,7 @@ public class Inscription1Activity extends ActionBarActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription1);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         // View initialisation
         mSuivantRelativeLayout = (RelativeLayout)findViewById(R.id.activity_inscription1_suivant_layout);
@@ -119,7 +121,15 @@ public class Inscription1Activity extends ActionBarActivity implements View.OnCl
     };
 
     private void showDate(int year, int month, int day) {
-        StringBuilder tmp = new StringBuilder().append(day);
+        StringBuilder tmp = new StringBuilder();
+        if( day <10)
+        {
+            tmp.append("0").append(day);
+        }
+        else
+        {
+            tmp.append(day);
+        }
         if( month+1 <10)
         {
             tmp.append("/").append("0").append(month + 1);

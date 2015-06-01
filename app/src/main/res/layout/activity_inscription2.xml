@@ -5,18 +5,20 @@
     android:background="@color/white"
     tools:context="com.ffjda.ffjudo.views.Inscription1Activity">
     <ImageView
-        android:layout_marginTop="10dp"
         android:id="@+id/activity_inscription2_logoffjda"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/ffjudo_logo_empty"/>
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bandeau_ffjda"/>
     <RelativeLayout
         android:layout_below="@+id/activity_inscription2_logoffjda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:background="@layout/round_border_blue_background_grey">
         <RelativeLayout
@@ -45,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:text="@string/etape_1"
+                android:text="@string/etape_2"
                 android:textColor="@color/white"
                 android:layout_margin="10dp"/>
         </RelativeLayout>
@@ -72,47 +74,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"/>
-                <EditText
+                <Spinner
+                    android:id="@+id/activity_inscription2_saison"
+                    android:entries="@array/discipline_arrays"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:hint="@string/_prenom"
-                    android:maxLines="1"
-                    android:singleLine="true"/>
-                <EditText
+                    android:layout_marginTop="5dp"/>
+                <TextView
                     android:layout_width="match_parent"
+                    android:layout_marginTop="30dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:hint="@string/_adresse_mail"
-                    android:maxLines="1"
-                    android:singleLine="true"/>
+                    android:text="Entrez un code postal pour trouver un club :"
+                    android:gravity="center"
+                    android:textColor="@color/blue"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
                     <EditText
-                        android:id="@+id/activity_inscription2_naissance"
+                        android:id="@+id/activity_inscription2_code_postal"
                         android:layout_width="0dp"
                         android:layout_weight="10"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:hint="@string/_date_naissance"
+                        android:hint="@string/_code_postal"
                         android:maxLines="1"
                         android:singleLine="true"/>
-                    <ImageView
+                    <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_weight="2"
-                        android:layout_height="40dp"
-                        android:src="@drawable/picto_calendar"
-                        android:onClick="setDate"/>
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:id="@+id/activity_inscription2_code_postal_valider"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/check_picto_background"
+                            android:clickable="true"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
                 </LinearLayout>
-                <Spinner
-                    android:id="@+id/activity_inscription2_sexe"
-                    android:entries="@array/sexe_arrays"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
             </LinearLayout>
         </ScrollView>
         <RelativeLayout

@@ -5,17 +5,19 @@
     android:background="@color/white"
     tools:context="com.ffjda.ffjudo.views.Inscription1Activity">
     <ImageView
-        android:layout_marginTop="10dp"
         android:id="@+id/activity_inscription1_logoffjda"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/ffjudo_logo_empty"/>
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/bandeau_ffjda"/>
         <RelativeLayout
             android:layout_below="@+id/activity_inscription1_logoffjda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:orientation="vertical"
             android:background="@layout/round_border_blue_background_grey">
@@ -76,28 +78,27 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:hint="@string/_prenom"
                         android:maxLines="1"
                         android:singleLine="true"/>
-                    <EditText
+                    <Spinner
+                        android:id="@+id/activity_inscription1_sexe"
+                        android:entries="@array/sexe_arrays"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:hint="@string/_adresse_mail"
-                        android:maxLines="1"
-                        android:singleLine="true"/>
+                        android:layout_marginTop="5dp"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:orientation="horizontal">
                         <EditText
                             android:id="@+id/activity_inscription1_naissance"
                             android:layout_width="0dp"
-                            android:layout_weight="10"
+                            android:layout_weight="5"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="5dp"
                             android:hint="@string/_date_naissance"
                             android:maxLines="1"
                             android:singleLine="true"/>
@@ -108,12 +109,41 @@
                             android:src="@drawable/picto_calendar"
                             android:onClick="setDate"/>
                     </LinearLayout>
-                    <Spinner
-                        android:id="@+id/activity_inscription1_sexe"
-                        android:entries="@array/sexe_arrays"
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="30dp"
+                        android:hint="@string/Adresse"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/_code_postal"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/Ville"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:hint="@string/_adresse_mail"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/Telephone"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
                 </LinearLayout>
             </ScrollView>
             <RelativeLayout

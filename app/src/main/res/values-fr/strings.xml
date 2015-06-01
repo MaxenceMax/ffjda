@@ -13,19 +13,41 @@
     <string name="__connexion">CONNEXION</string>
     <string name="pas_licencie">Pas encore licencié ?</string>
     <string name="obtenir_compte">Obtenez votre compte licencié</string>
+    <string name="prompt_email">Identifiant</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in_register"><b>HADJIME</b></string>
+    <string name="action_sign_in_short">HADJIME</string>
+    <string name="login_progress_signing_in">Connexion&#8230;</string>
+    <string name="error_invalid_email">L\'identifiant est incorrect</string>
+    <string name="error_invalid_password">Le mot de passe est trop court</string>
+    <string name="error_incorrect_password">Le mot de passe est incorrect</string>
+    <string name="error_field_required">Le champ est requis</string>
+
+    <!-- Ma licence -->
+    <string name="Ma_Licence">Ma Licence</string>
+    <string name="Renouvellement">Renouveller ma licence</string>
+
+    <!-- Mes licences -->
+    <string name="Mes_Licences">Mes Licences</string>
+    <string name="Deconnexion">Déconnexion</string>
 
     <!-- Inscription 1-2 -->
+    <string name="Valider">Valider</string>
+    <string name="Adresse">Adresse</string>
+    <string name="choix_club">Veuillez choisir un club dans la liste</string>
     <string name="saisie_nouvelle_licence">Saisie d\'une nouvelle licence</string>
     <string name="__saisie_nouvelle_licence">SAISIE D\'UNE NOUVELLE LICENCE</string>
     <string name="suivant">Suivant</string>
     <string name="__suivant">SUIVANT</string>
-    <string name="etape_1">Etape 1</string>
-    <string name="etape_2">Etape 2</string>
+    <string name="etape_1">Etape 1/3</string>
+    <string name="etape_2">Etape 2/3</string>
+    <string name="etape_3">Etape 3/3</string>
     <string name="_nom">Nom</string>
     <string name="_prenom">Prénom</string>
     <string name="_adresse_mail">Adresse mail</string>
     <string name="_sexe">Sexe</string>
     <string name="_date_naissance">Date de naissance</string>
+    <string name="_code_postal">Code postal</string>
     <string name="terminer">terminer</string>
     <string name="_terminer">Terminer</string>
     <string name="__terminer">TERMINER</string>
@@ -34,9 +56,20 @@
         <item>Masculin</item>
     </string-array>
     <string-array name="discipline_arrays">
-        <item>Judo</item>
-        <item>je sais pas </item>
-        <item>autre chose. </item>
+        <item>Judo Jujitsu</item>
+        <item>Kendo</item>
+        <item>Naginata</item>
+        <item>Jodo</item>
+        <item>Iaida</item>
+        <item>Kyudo</item>
+        <item>Sport chanbara</item>
     </string-array>
-
+    <string name="Conditions"><u>Conditions</u></string>
+    <string name="CNIL"><u>CNIL</u></string>
+    <string name="Refus"><u>Refus</u></string>
+    <string name="conditions_assurance">Vous trouvez un extrait des conditions des contrats souscrits par la FFJDA en cliquant sur le lien suivant :</string>
+    <string name="refus_assurance">Si toutefois vous ne souhaitez pas y souscrire, veuillez prendre connaissance des modalités :</string>
+    <string name="souscrire_assurance">Je souscris à l\'assurance :</string>
+    <string name="autorisation_cnil">J\'autorise l\'utilisation de mes données personnelles :</string>
+    <string name="conditions_cnil">Vous autorisez expressément la FFDJA à traiter et conserver par informatique les données vous concernant. Plus d\'informations en cliquand sur le lien suivant.</string>
 </resources>

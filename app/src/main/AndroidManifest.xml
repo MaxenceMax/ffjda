@@ -2,7 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ffjda.ffjudo" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.ffjda.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -32,7 +42,57 @@
         </activity>
         <activity
             android:name=".views.Inscription2Activity"
-            android:label="@string/title_activity_inscription2" >
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_inscription2"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.LicencesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_licences"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.DetailLicenceActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_detail_licence"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.RenouvellementActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_renouvellement"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.Inscription3Activity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_inscription3"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.CodePostalActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_code_postal"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="ffjda.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.ffjda.ffjudo.model" />
+
+        <activity
+            android:name=".views.HistoriqueClubActivity"
+            android:label="@string/title_activity_historique_club" >
         </activity>
     </application>
 
