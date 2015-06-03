@@ -23,6 +23,9 @@ import com.ffjda.ffjudo.R;
 import com.ffjda.ffjudo.model.Club;
 import com.ffjda.ffjudo.model.Licence;
 import com.ffjda.ffjudo.model.Licencie;
+import com.ffjda.ffjudo.utils.CheckConnection;
+import com.ffjda.ffjudo.utils.DialogCreation;
+import com.ffjda.ffjudo.utils.Utils;
 import com.ffjda.ffjudo.utils.Variable;
 
 import org.apache.http.HttpResponse;
@@ -60,10 +63,11 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     private View mLoginFormView;
     private View mLoginStatusView;
     private TextView mLoginStatusMessageView;
-    private TextView mCancelTextView;
+
     // View items
     private TextView pasLicencieTextView;
     private RelativeLayout mEnvoyerRelativeLayout;
+    private TextView pasCompteTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +88,8 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         pasLicencieTextView.setOnClickListener(this);
         mEnvoyerRelativeLayout = (RelativeLayout) findViewById(R.id.activity_login_envoyer);
         mEnvoyerRelativeLayout.setOnClickListener(this);
+        pasCompteTextView = (TextView) findViewById(R.id.activity_login_pas_compte);
+        pasCompteTextView.setOnClickListener(this);
 
         // Check preferences to know last login
         checkPreferences();
@@ -131,6 +137,13 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
      */
     public void attemptLogin() {
         if (mAuthTask != null) {
+            return;
+        }
+
+        // Check conection
+        if(!CheckConnection.isNetworkAvailable(this))
+        {
+            Utils.showAlertNoConnexionAtLogin(this);
             return;
         }
 
@@ -199,13 +212,31 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.activity_login_pas_licencie:
+                if(!CheckConnection.isNetworkAvailable(this))
+                {
+                    Utils.showAlertNoConnexion(this);
+                    return;
+                }
                 Intent inscriptionIntent = new Intent(this,Inscription1Activity.class);
-                startActivity(inscriptionIntent);
+                startActivityForResult(inscriptionIntent, Variable.REQUEST_CODE_SUIV);
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
                 break;
             case R.id.activity_login_envoyer:
                 attemptLogin();
                 break;
+            case R.id.activity_login_pas_compte:
+                DialogCreation.createDialog(this,getString(R.string.Compte_licencie),getString(R.string.Compte_licencie_explain));
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == Variable.REQUEST_CODE_SUIV && resultCode == Variable.REQUEST_CODE_COMPLETE)
+        {
+            DialogCreation.createDialog(this,
+                    getString(R.string.Inscription_effectuee),
+                    getString(R.string.Inscription_effectuee_desc, data.getStringExtra("mail")));
         }
     }
 

@@ -69,6 +69,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <EditText
+                        android:id="@+id/activity_inscription1_nom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -76,6 +77,7 @@
                         android:maxLines="1"
                         android:singleLine="true"/>
                     <EditText
+                        android:id="@+id/activity_inscription1_prenom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -110,6 +112,7 @@
                             android:onClick="setDate"/>
                     </LinearLayout>
                     <EditText
+                        android:id="@+id/activity_inscription1_adresse"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
@@ -117,13 +120,16 @@
                         android:maxLines="1"
                         android:singleLine="true"/>
                     <EditText
+                        android:id="@+id/activity_inscription1_code_postal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:inputType="number"
                         android:hint="@string/_code_postal"
                         android:maxLines="1"
                         android:singleLine="true"/>
                     <EditText
+                        android:id="@+id/activity_inscription1_ville"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -131,6 +137,7 @@
                         android:maxLines="1"
                         android:singleLine="true"/>
                     <EditText
+                        android:id="@+id/activity_inscription1_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
@@ -138,9 +145,11 @@
                         android:maxLines="1"
                         android:singleLine="true"/>
                     <EditText
+                        android:id="@+id/activity_inscription1_telephone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:inputType="phone"
                         android:hint="@string/Telephone"
                         android:maxLines="1"
                         android:singleLine="true"/>

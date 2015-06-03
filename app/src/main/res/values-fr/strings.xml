@@ -25,7 +25,7 @@
 
     <!-- Ma licence -->
     <string name="Ma_Licence">Ma Licence</string>
-    <string name="Renouvellement">Renouveller ma licence</string>
+    <string name="Renouvellement">Renouveler ma licence</string>
 
     <!-- Mes licences -->
     <string name="Mes_Licences">Mes Licences</string>
@@ -33,7 +33,7 @@
 
     <!-- Inscription 1-2 -->
     <string name="Valider">Valider</string>
-    <string name="Adresse">Adresse</string>
+    <string name="Adresse">Adresse (*)</string>
     <string name="choix_club">Veuillez choisir un club dans la liste</string>
     <string name="saisie_nouvelle_licence">Saisie d\'une nouvelle licence</string>
     <string name="__saisie_nouvelle_licence">SAISIE D\'UNE NOUVELLE LICENCE</string>
@@ -42,12 +42,12 @@
     <string name="etape_1">Etape 1/3</string>
     <string name="etape_2">Etape 2/3</string>
     <string name="etape_3">Etape 3/3</string>
-    <string name="_nom">Nom</string>
-    <string name="_prenom">Prénom</string>
-    <string name="_adresse_mail">Adresse mail</string>
-    <string name="_sexe">Sexe</string>
+    <string name="_nom">Nom (*)</string>
+    <string name="_prenom">Prénom (*)</string>
+    <string name="_adresse_mail">Adresse mail (*)</string>
+    <string name="_sexe">Sexe (*)</string>
     <string name="_date_naissance">Date de naissance</string>
-    <string name="_code_postal">Code postal</string>
+    <string name="_code_postal">Code postal (*)</string>
     <string name="terminer">terminer</string>
     <string name="_terminer">Terminer</string>
     <string name="__terminer">TERMINER</string>
@@ -60,7 +60,7 @@
         <item>Kendo</item>
         <item>Naginata</item>
         <item>Jodo</item>
-        <item>Iaida</item>
+        <item>Iaido</item>
         <item>Kyudo</item>
         <item>Sport chanbara</item>
     </string-array>
@@ -72,4 +72,34 @@
     <string name="souscrire_assurance">Je souscris à l\'assurance :</string>
     <string name="autorisation_cnil">J\'autorise l\'utilisation de mes données personnelles :</string>
     <string name="conditions_cnil">Vous autorisez expressément la FFDJA à traiter et conserver par informatique les données vous concernant. Plus d\'informations en cliquand sur le lien suivant.</string>
+    <string name="Compte_licencie_explain">Créez votre compte espace licencié en vous connectant sur www.judo.com.</string>
+    <string name="Compte_licencie">Compte licencié</string>
+    <string name="bad_email">Adresse email incorrecte !</string>
+    <string name="bad_email_desc">L\'adresse email doit être de la forme suivante exemple@exemple.fr.</string>
+    <string name="bad_cp">Code postal incorrect !</string>
+    <string name="bad_cp_desc">Le code postal doit être de la forme suivante 95000 ou le département de la forme 95.</string>
+    <string name="champs_requis">Tous les champs sont requis !</string>
+    <string name="champs_requis_desc">Veuillez renseigner tous les champs pour continuer.</string>
+    <string name="recherche_club">Entrez un code postal pour trouver un club :</string>
+    <string name="club_choisi">Club choisi :</string>
+    <string name="Club_manquant">Club manquant !</string>
+    <string name="Club_manquant_desc">Renseignez un code postal ou le departement désiré, validez et choississez le club dans la liste.</string>
+    <string name="Redirection">Redirection</string>
+    <string name="Redirection_desc">Vous allez être redirigé sur le site de la Fédération Française de Judo, voulez-vous continer ?</string>
+    <string name="Inscription_en_cours">Inscription en cours ...</string>
+    <string name="recuperation_club">Récupération du club actuel ...</string>
+    <string name="Inscription_effectuee">Inscription Effectuée</string>
+    <string name="Inscription_effectuee_desc">Votre inscription a bien été prise en compte, vous avez dû recevoir un mail à l\'adresse suivante : %1$s. De plus, vous pouvez vous rendre directement dans votre club pour prendre contact avec le professeur.</string>
+    <string name="Inscription_echec">Erreur inscription</string>
+    <string name="Inscription_erreur_desc">Il semble que vous avez déjà procédé à une inscription/renouvellement dans cette discpline pour l\'année en cours.</string>
+
+    <!-- General text -->
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+
+
+    <!-- Ajout nouvelle licence -->
+    <string name="etape_1_2">Etape 1/2</string>
+    <string name="etape_2_2">Etape 2/2</string>
+    <string name="Ajout_licence">Ajout d\'une licence</string>
 </resources>

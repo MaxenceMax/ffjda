@@ -14,23 +14,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ffjda.ffjudo.R;
-import com.ffjda.ffjudo.model.Club;
-import com.ffjda.ffjudo.model.Licence;
-import com.ffjda.ffjudo.model.Licencie;
 import com.ffjda.ffjudo.model.NouvelleLicence;
+import com.ffjda.ffjudo.model.RenouvellementAjoutLicence;
 import com.ffjda.ffjudo.utils.DialogCreation;
 import com.ffjda.ffjudo.utils.Variable;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -38,20 +35,17 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 
+public class RenouvellementAjout2Activity extends ActionBarActivity implements View.OnClickListener{
 
-public class Inscription3Activity extends ActionBarActivity implements View.OnClickListener {
+    private LinearLayout activityRenouvellementAjout2Status;
+    private CheckBox activityRenouvellementAjout2Assurance;
+    private TextView activityRenouvellementAjout2Contitions;
+    private TextView activityRenouvellementAjout2Refus;
+    private CheckBox activityRenouvellementAjout2Cnil;
+    private TextView activityRenouvellementAjout2CnilLien;
+    private RelativeLayout activityRenouvellementAjout2ValiderLayout;
 
-    // Nouvelle licence to sent
-    private NouvelleLicence mNouvelleLicence;
-
-    // View Element
-    private CheckBox activityInscription3Assurance;
-    private TextView activityInscription3Contitions;
-    private TextView activityInscription3Refus;
-    private CheckBox activityInscription3Cnil;
-    private TextView activityInscription3CnilLien;
-    private RelativeLayout mValiderRelativeLayout;
-
+    private RenouvellementAjoutLicence mNouvelleLicence;
     // Progress show
     private View mLoginFormView;
     private View mLoginStatusView;
@@ -59,22 +53,24 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
     /**
      * Find the Views in the layout<br />
      * <br />
-     * Auto-created on 2015-06-02 13:30:23 by Android Layout Finder
+     * Auto-created on 2015-06-03 18:14:22 by Android Layout Finder
      * (http://www.buzzingandroid.com/tools/android-layout-finder)
      */
     private void findViews() {
-        activityInscription3Assurance = (CheckBox)findViewById( R.id.activity_inscription3_assurance );
-        activityInscription3Contitions = (TextView)findViewById( R.id.activity_inscription3_contitions );
-        activityInscription3Contitions.setOnClickListener(this);
-        activityInscription3Refus = (TextView)findViewById( R.id.activity_inscription3_refus );
-        activityInscription3Refus.setOnClickListener(this);
-        activityInscription3Cnil = (CheckBox)findViewById( R.id.activity_inscription3_cnil );
-        activityInscription3CnilLien = (TextView)findViewById( R.id.activity_inscription3_cnil_lien );
-        activityInscription3CnilLien.setOnClickListener(this);
-        mValiderRelativeLayout= (RelativeLayout) findViewById(R.id.activity_inscription3_valider_layout);
-        mValiderRelativeLayout.setOnClickListener(this);
-        mLoginFormView = findViewById(R.id.activity_inscription3_scroolView);
-        mLoginStatusView = findViewById(R.id.activity_inscription3_status);
+        activityRenouvellementAjout2Status = (LinearLayout)findViewById( R.id.activity_renouvellement_ajout2_status );
+        activityRenouvellementAjout2Assurance = (CheckBox)findViewById( R.id.activity_renouvellement_ajout2_assurance );
+        activityRenouvellementAjout2Contitions = (TextView)findViewById( R.id.activity_renouvellement_ajout2_contitions );
+        activityRenouvellementAjout2Refus = (TextView)findViewById( R.id.activity_renouvellement_ajout2_refus );
+        activityRenouvellementAjout2Cnil = (CheckBox)findViewById( R.id.activity_renouvellement_ajout2_cnil );
+        activityRenouvellementAjout2CnilLien = (TextView)findViewById( R.id.activity_renouvellement_ajout2_cnil_lien );
+        activityRenouvellementAjout2ValiderLayout = (RelativeLayout)findViewById( R.id.activity_renouvellement_ajout2_valider_layout );
+        mLoginFormView = findViewById(R.id.activity_renouvellement_ajout2_scroolView);
+        mLoginStatusView = findViewById(R.id.activity_renouvellement_ajout2_status);
+        activityRenouvellementAjout2CnilLien.setOnClickListener(this);
+        activityRenouvellementAjout2Contitions.setOnClickListener(this);
+        activityRenouvellementAjout2Refus.setOnClickListener(this);
+        activityRenouvellementAjout2ValiderLayout.setOnClickListener(this);
+
     }
 
     /**
@@ -121,12 +117,12 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inscription3);
+        setContentView(R.layout.activity_renouvellement_ajout2);
 
         // Hide keyboard
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         // get nouvelle Licence
-        mNouvelleLicence = (NouvelleLicence)getIntent().getSerializableExtra("nouvelleLicence");
+        mNouvelleLicence = (RenouvellementAjoutLicence)getIntent().getSerializableExtra("nouvelleLicence");
 
         // view initialisation
         findViews();
@@ -135,26 +131,8 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_inscription3, menu);
+        getMenuInflater().inflate(R.menu.menu_renouvellement_ajout2, menu);
         return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
-    }
-
-    /**
-     *
-     */
-    private void endActivity()
-    {
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra("mail", mNouvelleLicence.getMail());
-        setResult(Variable.REQUEST_CODE_COMPLETE,resultIntent);
-        finish();
-        overridePendingTransition(R.anim.slide_out_left,R.anim.slide_out_right);
     }
 
     @Override
@@ -173,33 +151,47 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
+    }
+
+    /**
+     *
+     */
+    private void endActivityAjout() {
+        setResult(Variable.REQUEST_CODE_COMPLETE_AJOUT);
+        finish();
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.activity_inscription3_cnil_lien :
-                DialogCreation.createDialogForUrl(this,getString(R.string.Redirection),
+            case R.id.activity_renouvellement_ajout2_cnil_lien :
+                DialogCreation.createDialogForUrl(this, getString(R.string.Redirection),
                         getString(R.string.Redirection_desc),
                         getString(R.string.yes),
                         getString(R.string.no),
                         Variable.URLCNIL);
                 break;
-            case R.id.activity_inscription3_contitions:
+            case R.id.activity_renouvellement_ajout2_contitions:
                 DialogCreation.createDialogForUrl(this,getString(R.string.Redirection),
                         getString(R.string.Redirection_desc),
                         getString(R.string.yes),
                         getString(R.string.no),
                         Variable.URLCONDITION);
                 break;
-            case R.id.activity_inscription3_refus :
+            case R.id.activity_renouvellement_ajout2_refus :
                 DialogCreation.createDialogForUrl(this,getString(R.string.Redirection),
                         getString(R.string.Redirection_desc),
                         getString(R.string.yes),
                         getString(R.string.no),
                         Variable.URLREFUS);
                 break;
-            case R.id.activity_inscription3_valider_layout:
-                mNouvelleLicence.setCnil(!activityInscription3Cnil.isChecked());
-                mNouvelleLicence.setAssurance(!activityInscription3Assurance.isChecked());
+            case R.id.activity_renouvellement_ajout2_valider_layout:
+                mNouvelleLicence.setCnil(!activityRenouvellementAjout2Cnil.isChecked());
+                mNouvelleLicence.setAssurance(!activityRenouvellementAjout2Assurance.isChecked());
                 System.out.println(mNouvelleLicence);
 
                 TakeLicenceTask tlt = new TakeLicenceTask();
@@ -218,7 +210,6 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
         return this;
     }
 
-
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
@@ -235,18 +226,11 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
                 JSONObject user = new JSONObject();
                 user.put("clubcompteur", mNouvelleLicence.getClub_compteur());
                 user.put("dojocompteur",mNouvelleLicence.getDojo_compteur());
-                user.put("nom", mNouvelleLicence.getNom());
-                user.put("sexe", mNouvelleLicence.getSexe());
                 user.put("assurance", mNouvelleLicence.getAssurance());
-                user.put("naissance", mNouvelleLicence.getDate_naissance().replaceAll("/", Matcher.quoteReplacement("/")));
-                user.put("cp", mNouvelleLicence.getCode_postal());
-                user.put("ville", mNouvelleLicence.getVille());
-                user.put("adresse", mNouvelleLicence.getAdresse());
-                user.put("prenom", mNouvelleLicence.getPrenom());
-                user.put("saison", mNouvelleLicence.getSaison().replaceAll("/",Matcher.quoteReplacement("/")));
+                user.put("naissance", mNouvelleLicence.getNaissance().replaceAll("/", Matcher.quoteReplacement("/")));
+                user.put("saison", mNouvelleLicence.getSaison().replaceAll("/", Matcher.quoteReplacement("/")));
+                user.put("numLicence",mNouvelleLicence.getNumlicence());
                 user.put("cnil", mNouvelleLicence.getCnil());
-                user.put("telephone", mNouvelleLicence.getTelephone());
-                user.put("mail", mNouvelleLicence.getMail());
                 JSONObject utils = new JSONObject();
                 utils.put("lic", user);
                 //passes the results to a string builder/entity
@@ -263,7 +247,7 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
                 System.out.println("Statut code : "+response.getStatusLine().getStatusCode());
                 result = convertStreamToString(response.getEntity().getContent());
                 System.out.println("Result"+result);
-                if(result.isEmpty())
+                if(!result.equals("YES"))
                     return false;
             }catch(Exception e)
             {
@@ -293,7 +277,7 @@ public class Inscription3Activity extends ActionBarActivity implements View.OnCl
         protected void onPostExecute(final Boolean success) {
 
             if (success) {
-                endActivity();
+                endActivityAjout();
             } else {
                 DialogCreation.createDialog(getLocalContext(),
                         getString(R.string.Inscription_echec),

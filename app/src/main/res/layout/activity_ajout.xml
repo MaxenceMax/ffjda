@@ -5,7 +5,7 @@
     android:background="@color/white"
     tools:context="com.ffjda.ffjudo.views.Inscription1Activity">
     <ImageView
-        android:id="@+id/activity_inscription2_logoffjda"
+        android:id="@+id/activity_ajout_logoffjda"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"
@@ -13,7 +13,7 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/bandeau_ffjda"/>
     <RelativeLayout
-        android:layout_below="@+id/activity_inscription2_logoffjda"
+        android:layout_below="@+id/activity_ajout_logoffjda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -23,36 +23,74 @@
         android:background="@layout/round_border_blue_background_grey">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:background="@layout/tops_radius_background_blue"
             android:clickable="true"
-            android:id="@+id/activity_inscription2_view_top">
+            android:id="@+id/activity_ajout_view_top">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
                 <TextView
                     android:textSize="20dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="5"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/saisie_nouvelle_licence"
+                    android:text="@string/Ajout_licence"
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Vos informations :"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:id="@+id/activity_ajout_nom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/activity_ajout_num_licence"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/activity_ajout_naissance"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white"/>
+                <TextView
+                    android:textSize="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/etape_1_2"
                     android:textColor="@color/white"
                     android:layout_margin="10dp"/>
             </LinearLayout>
-            <TextView
-                android:textSize="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:text="@string/etape_2"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
         </RelativeLayout>
         <ImageView
-            android:layout_below="@id/activity_inscription2_view_top"
+            android:layout_below="@id/activity_ajout_view_top"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:src="@drawable/picto_arrow_down"/>
@@ -60,8 +98,8 @@
             android:paddingBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/activity_inscription2_suivant_layout_view"
-            android:layout_below="@id/activity_inscription2_view_top">
+            android:layout_above="@+id/activity_ajout_suivant_layout_view"
+            android:layout_below="@id/activity_ajout_view_top">
             <LinearLayout
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
@@ -69,14 +107,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <Spinner
-                    android:id="@+id/activity_inscription2_saison"
+                    android:id="@+id/activity_ajout_saison"
                     android:entries="@array/sexe_arrays"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"/>
                 <Spinner
-                    android:id="@+id/activity_inscription2_discipline"
-                    android:entries="@array/discipline_arrays"
+                    android:id="@+id/activity_ajout_discipline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"/>
@@ -92,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <EditText
-                        android:id="@+id/activity_inscription2_code_postal"
+                        android:id="@+id/activity_ajout_code_postal"
                         android:layout_width="0dp"
                         android:layout_weight="10"
                         android:layout_height="wrap_content"
@@ -106,7 +143,7 @@
                         android:layout_weight="2"
                         android:layout_height="match_parent">
                         <RelativeLayout
-                            android:id="@+id/activity_inscription2_code_postal_valider"
+                            android:id="@+id/activity_ajout_code_postal_valider"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:background="@drawable/check_picto_background"
@@ -119,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp">
                     <ImageView
-                        android:id="@+id/activity_inscription2_valide"
+                        android:id="@+id/activity_ajout_valide"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_alignParentRight="true"
@@ -137,19 +174,19 @@
                             android:textSize="20dp"
                             android:textStyle="bold"
                             android:textColor="@color/blue"
-                            android:id="@+id/activity_inscription2_nom"/>
+                            android:id="@+id/activity_ajout_nom_dojo"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18dp"
                             android:textColor="@color/blue"
-                            android:id="@+id/activity_inscription2_designation"/>
+                            android:id="@+id/activity_ajout_designation"/>
                         <LinearLayout
                             android:layout_marginTop="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
-                                android:id="@+id/activity_inscription2_dojo"
+                                android:id="@+id/activity_ajout_dojo"
                                 android:text="Dojo"
                                 android:visibility="gone"
                                 android:layout_width="wrap_content"
@@ -160,10 +197,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="3dp"
                                 android:textColor="@color/blue"
-                                android:id="@+id/activity_inscription2_dojo_compteur"/>
+                                android:id="@+id/activity_ajout_dojo_compteur"/>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/activity_inscription2_adresse"
+                            android:id="@+id/activity_ajout_adresse"
                             android:textColor="@color/blue"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
@@ -172,13 +209,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp">
                             <TextView
-                                android:id="@+id/activity_inscription2_code_postal_choisi"
+                                android:id="@+id/activity_ajout_code_postal_choisi"
                                 android:textColor="@color/blue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:layout_marginLeft="3dp"
-                                android:id="@+id/activity_inscription2_ville"
+                                android:id="@+id/activity_ajout_ville"
                                 android:textColor="@color/blue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
@@ -188,14 +225,14 @@
             </LinearLayout>
         </ScrollView>
         <RelativeLayout
-            android:id="@+id/activity_inscription2_suivant_layout_view"
+            android:id="@+id/activity_ajout_suivant_layout_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:paddingBottom="10dp">
             <RelativeLayout
-                android:id="@+id/activity_inscription2_suivant_layout"
+                android:id="@+id/activity_ajout_suivant_layout"
                 android:layout_width="match_parent"
                 android:background="@drawable/blue_layout_clickable"
                 android:clickable="true"

@@ -5,7 +5,7 @@
     android:background="@color/white"
     tools:context="com.ffjda.ffjudo.views.Inscription1Activity">
     <ImageView
-        android:id="@+id/activity_inscription3_logoffjda"
+        android:id="@+id/activity_renouvellement_ajout2_logoffjda"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -13,7 +13,7 @@
         android:layout_marginRight="10dp"
         android:src="@drawable/bandeau_ffjda"/>
     <RelativeLayout
-        android:layout_below="@+id/activity_inscription3_logoffjda"
+        android:layout_below="@+id/activity_renouvellement_ajout2_logoffjda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -26,7 +26,7 @@
             android:layout_height="70dp"
             android:background="@layout/tops_radius_background_blue"
             android:clickable="true"
-            android:id="@+id/activity_inscription3_view_top">
+            android:id="@+id/activity_renouvellement_ajout2_view_top">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,24 +47,24 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:text="@string/etape_3"
+                android:text="@string/etape_2_2"
                 android:textColor="@color/white"
                 android:layout_margin="10dp"/>
         </RelativeLayout>
         <ImageView
-            android:layout_below="@id/activity_inscription3_view_top"
+            android:layout_below="@id/activity_renouvellement_ajout2_view_top"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:src="@drawable/picto_arrow_down"/>
         <LinearLayout
-            android:id="@+id/activity_inscription3_status"
+            android:id="@+id/activity_renouvellement_ajout2_status"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:background="@color/white"
             android:orientation="vertical"
-            android:layout_above="@+id/activity_inscription3_suivant_layout_view"
-            android:layout_below="@id/activity_inscription3_view_top"
+            android:layout_above="@+id/activity_renouvellement_ajout2_suivant_layout_view"
+            android:layout_below="@id/activity_renouvellement_ajout2_view_top"
             android:visibility="gone" >
             <ProgressBar
                 android:layout_width="wrap_content"
@@ -80,12 +80,12 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <ScrollView
-            android:id="@+id/activity_inscription3_scroolView"
+            android:id="@+id/activity_renouvellement_ajout2_scroolView"
             android:paddingBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/activity_inscription3_suivant_layout_view"
-            android:layout_below="@id/activity_inscription3_view_top">
+            android:layout_above="@+id/activity_renouvellement_ajout2_suivant_layout_view"
+            android:layout_below="@id/activity_renouvellement_ajout2_view_top">
             <LinearLayout
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
@@ -118,7 +118,7 @@
                         android:layout_weight="2"
                         android:layout_height="match_parent">
                         <CheckBox
-                            android:id="@+id/activity_inscription3_assurance"
+                            android:id="@+id/activity_renouvellement_ajout2_assurance"
                             android:checked="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/conditions_assurance"/>
                 <TextView
-                    android:id="@+id/activity_inscription3_contitions"
+                    android:id="@+id/activity_renouvellement_ajout2_contitions"
                     android:layout_marginTop="5dp"
                     android:text="@string/Conditions"
                     android:gravity="center"
@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/refus_assurance"/>
                 <TextView
-                    android:id="@+id/activity_inscription3_refus"
+                    android:id="@+id/activity_renouvellement_ajout2_refus"
                     android:layout_marginTop="5dp"
                     android:text="@string/Refus"
                     android:gravity="center"
@@ -184,7 +184,7 @@
                         android:layout_weight="2"
                         android:layout_height="match_parent">
                         <CheckBox
-                            android:id="@+id/activity_inscription3_cnil"
+                            android:id="@+id/activity_renouvellement_ajout2_cnil"
                             android:checked="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/conditions_cnil"/>
                 <TextView
-                    android:id="@+id/activity_inscription3_cnil_lien"
+                    android:id="@+id/activity_renouvellement_ajout2_cnil_lien"
                     android:text="@string/CNIL"
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -209,14 +209,14 @@
             </LinearLayout>
         </ScrollView>
         <RelativeLayout
-            android:id="@+id/activity_inscription3_suivant_layout_view"
+            android:id="@+id/activity_renouvellement_ajout2_suivant_layout_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:paddingBottom="10dp">
             <RelativeLayout
-                android:id="@+id/activity_inscription3_valider_layout"
+                android:id="@+id/activity_renouvellement_ajout2_valider_layout"
                 android:layout_width="match_parent"
                 android:background="@drawable/blue_layout_clickable"
                 android:clickable="true"

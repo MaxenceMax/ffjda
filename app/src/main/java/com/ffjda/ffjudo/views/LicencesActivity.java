@@ -17,6 +17,9 @@ import com.ffjda.ffjudo.R;
 import com.ffjda.ffjudo.adapter.LicencesAdapter;
 import com.ffjda.ffjudo.model.Licence;
 import com.ffjda.ffjudo.model.Licencie;
+import com.ffjda.ffjudo.utils.CheckConnection;
+import com.ffjda.ffjudo.utils.DialogCreation;
+import com.ffjda.ffjudo.utils.Utils;
 import com.ffjda.ffjudo.utils.Variable;
 
 import java.util.ArrayList;
@@ -134,12 +137,28 @@ public class LicencesActivity extends ActionBarActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.activity_licences_add_licence:
-                Intent maLicence = new Intent(this, DetailLicenceActivity.class);
-                startActivity(maLicence);
+                if(!CheckConnection.isNetworkAvailable(this))
+                {
+                    Utils.showAlertNoConnexion(this);
+                    return;
+                }
+                Intent intent = new Intent(this,AjoutActivity.class);
+                startActivityForResult(intent, Variable.REQUEST_CODE_SUIV);
+                overridePendingTransition(R.anim.slide_in_bottom,R.anim.slide_fix);
                 break;
             case R.id.activity_licences_deconnexion:
                 deconnexion();
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == Variable.REQUEST_CODE_SUIV && resultCode == Variable.REQUEST_CODE_COMPLETE_AJOUT)
+        {
+            DialogCreation.createDialog(this,
+                    getString(R.string.Ajout_effectuee),
+                    getString(R.string.Ajout_effectuee_desc));
         }
     }
 

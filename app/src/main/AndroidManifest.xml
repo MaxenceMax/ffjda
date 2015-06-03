@@ -94,6 +94,14 @@
             android:name=".views.HistoriqueClubActivity"
             android:label="@string/title_activity_historique_club" >
         </activity>
+        <activity
+            android:name=".views.AjoutActivity"
+            android:label="@string/title_activity_renouvellement_ajout" >
+        </activity>
+        <activity
+            android:name=".views.RenouvellementAjout2Activity"
+            android:label="@string/title_activity_renouvellement_ajout2" >
+        </activity>
     </application>
 
 </manifest>

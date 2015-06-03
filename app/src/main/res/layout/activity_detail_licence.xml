@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         android:gravity="center"
-                        android:text="Judo"/>
+                        android:id="@+id/activity_detail_licence_discipline"/>
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
@@ -249,7 +249,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/white">
             <RelativeLayout
-                android:id="@+id/activity_detail_licence_suivant_layout"
+                android:id="@+id/activity_detail_licence_renouvellement_layout"
                 android:layout_width="match_parent"
                 android:background="@drawable/blue_layout_clickable"
                 android:clickable="true"

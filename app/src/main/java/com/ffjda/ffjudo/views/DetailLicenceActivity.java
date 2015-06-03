@@ -13,11 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ffjda.ffjudo.R;
 import com.ffjda.ffjudo.model.Licence;
 import com.ffjda.ffjudo.model.Licencie;
+import com.ffjda.ffjudo.utils.CheckConnection;
+import com.ffjda.ffjudo.utils.Utils;
+import com.ffjda.ffjudo.utils.Variable;
 import com.onbarcode.barcode.android.AndroidColor;
 import com.onbarcode.barcode.android.AndroidFont;
 import com.onbarcode.barcode.android.Code128;
@@ -39,6 +43,8 @@ public class DetailLicenceActivity extends ActionBarActivity implements View.OnC
     private TextView mSexeTextView;
     private ImageView mValideImageView;
     private ImageView mHistoImageView;
+    private TextView mDisciplineTextView;
+    private RelativeLayout mRenouvellementRelativeLayout;
 
     // Image for code and qrCode
     private ImageView mImageViewCode128;
@@ -58,12 +64,15 @@ public class DetailLicenceActivity extends ActionBarActivity implements View.OnC
         mNumLicenceTextView  = (TextView) findViewById(R.id.activity_detail_licence_num_licence);
         mGradeTextView  = (TextView) findViewById(R.id.activity_detail_licence_grade);
         mSexeTextView  = (TextView) findViewById(R.id.activity_detail_licence_sexe);
+        mDisciplineTextView = (TextView) findViewById(R.id.activity_detail_licence_discipline);
         mClubTextView  = (TextView) findViewById(R.id.activity_detail_licence_club);
         mImageViewCode128  = (ImageView) findViewById(R.id.activity_detail_licence_code128);
         mImageViewQrcode = (ImageView) findViewById(R.id.activity_detail_licence_add_qrcode);
         mValideImageView = (ImageView) findViewById(R.id.activity_detail_licence_valide);
         mHistoImageView = (ImageView) findViewById(R.id.activity_detail_licence_histo);
         mHistoImageView.setOnClickListener(this);
+        mRenouvellementRelativeLayout = (RelativeLayout) findViewById(R.id.activity_detail_licence_renouvellement_layout);
+        mRenouvellementRelativeLayout.setOnClickListener(this);
 
         //Generate qrCode and Code 128
         codeGeneration();
@@ -79,6 +88,7 @@ public class DetailLicenceActivity extends ActionBarActivity implements View.OnC
         mNumLicenceTextView.setText(mCurrentLicencie.getNum_licence());
         mNomTextView.setText(mCurrentLicencie.getNom() + " " + mCurrentLicencie.getPrenom());
         mDateNaissanceTextView.setText(mCurrentLicencie.getDate_naissance());
+        mDisciplineTextView.setText(mCurrentLicence.getDiscipline());
 
         if(mCurrentLicence.getEstLicencie().equals("YES"))
             mValideImageView.setImageDrawable(getResources().getDrawable(R.drawable.valide_green_picto));
@@ -275,6 +285,18 @@ public class DetailLicenceActivity extends ActionBarActivity implements View.OnC
                 histo.putExtra("licence",mCurrentLicence);
                 startActivity(histo);
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
+                break;
+            case R.id.activity_detail_licence_renouvellement_layout:
+                if(!CheckConnection.isNetworkAvailable(this))
+                {
+                    Utils.showAlertNoConnexion(this);
+                    return;
+                }
+                Intent intent = new Intent(this,RenouvellementActivity.class);
+                intent.putExtra("licence",mCurrentLicence);
+                intent.putExtra("licencie",mCurrentLicencie);
+                startActivityForResult(intent, Variable.REQUEST_CODE_SUIV);
+                overridePendingTransition(R.anim.slide_in_bottom,R.anim.slide_fix);
                 break;
         }
     }

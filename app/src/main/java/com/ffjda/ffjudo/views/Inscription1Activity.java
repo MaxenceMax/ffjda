@@ -15,6 +15,10 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.ffjda.ffjudo.R;
+import com.ffjda.ffjudo.model.NouvelleLicence;
+import com.ffjda.ffjudo.utils.DialogCreation;
+import com.ffjda.ffjudo.utils.StringValidator;
+import com.ffjda.ffjudo.utils.Variable;
 
 import java.util.Calendar;
 
@@ -23,7 +27,6 @@ public class Inscription1Activity extends ActionBarActivity implements View.OnCl
     // View tiems
     private RelativeLayout mSuivantRelativeLayout;
     private EditText mNaissanceEditText;
-    private Spinner mSexeSpinner;
 
 
     // Date picker
@@ -31,6 +34,33 @@ public class Inscription1Activity extends ActionBarActivity implements View.OnCl
     private static int _MAJORITY = 18;
     private DatePicker datePicker;
     private Calendar calendar;
+
+    // View elements
+    private EditText activityInscription1Nom;
+    private EditText activityInscription1Prenom;
+    private Spinner activityInscription1Sexe;
+    private EditText activityInscription1Adresse;
+    private EditText activityInscription1CodePostal;
+    private EditText activityInscription1Ville;
+    private EditText activityInscription1Email;
+    private EditText activityInscription1Telephone;
+
+    /**
+     * Find the Views in the layout<br />
+     * <br />
+     * Auto-created on 2015-06-01 20:05:26 by Android Layout Finder
+     * (http://www.buzzingandroid.com/tools/android-layout-finder)
+     */
+    private void findViews() {
+        activityInscription1Nom = (EditText)findViewById( R.id.activity_inscription1_nom );
+        activityInscription1Prenom = (EditText)findViewById( R.id.activity_inscription1_prenom );
+        activityInscription1Sexe = (Spinner)findViewById( R.id.activity_inscription1_sexe );
+        activityInscription1Adresse = (EditText)findViewById( R.id.activity_inscription1_adresse );
+        activityInscription1CodePostal = (EditText)findViewById( R.id.activity_inscription1_code_postal );
+        activityInscription1Ville = (EditText)findViewById( R.id.activity_inscription1_ville );
+        activityInscription1Email = (EditText)findViewById( R.id.activity_inscription1_email );
+        activityInscription1Telephone = (EditText)findViewById( R.id.activity_inscription1_telephone );
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +73,8 @@ public class Inscription1Activity extends ActionBarActivity implements View.OnCl
         mSuivantRelativeLayout.setOnClickListener(this);
         mNaissanceEditText = (EditText) findViewById(R.id.activity_inscription1_naissance);
         wakeUpDate();
+
+        findViews();
     }
 
 
@@ -73,10 +105,68 @@ public class Inscription1Activity extends ActionBarActivity implements View.OnCl
         switch (v.getId())
         {
             case R.id.activity_inscription1_suivant_layout :
-                Intent inscription2 = new Intent(this,Inscription2Activity.class);
-                startActivity(inscription2);
+                //check if all edit text are completed
+                StringValidator testString = new StringValidator();
+                if( activityInscription1Nom.getText().toString().trim().isEmpty() ||
+                    activityInscription1Prenom.getText().toString().trim().isEmpty()||
+                    activityInscription1Adresse.getText().toString().trim().isEmpty() ||
+                    activityInscription1CodePostal.getText().toString().trim().isEmpty()||
+                    activityInscription1Ville.getText().toString().trim().isEmpty() ||
+                    activityInscription1Email.getText().toString().trim().isEmpty())
+                {
+                    DialogCreation.createDialog(this, getString(R.string.champs_requis), getString(R.string.champs_requis_desc));
+                    return;
+                }else if(!testString.validateEmail(activityInscription1Email.getText().toString()))
+                {
+                    DialogCreation.createDialog(this,getString(R.string.bad_email),getString(R.string.bad_email_desc));
+                    return;
+                }
+                else if(activityInscription1CodePostal.length() != 5) {
+                    DialogCreation.createDialog(this,getString(R.string.bad_cp),getString(R.string.bad_cp_desc));
+                    return;
+                }
+                else
+                {
+                    NouvelleLicence nv = new NouvelleLicence();
+                    nv.setNom(activityInscription1Nom.getText().toString().trim());
+                    nv.setPrenom(activityInscription1Prenom.getText().toString().trim());
+                    nv.setDate_naissance(mNaissanceEditText.getText().toString().trim());
+                    nv.setAdresse(activityInscription1Adresse.getText().toString().trim());
+                    nv.setCode_postal(activityInscription1CodePostal.getText().toString().trim());
+                    nv.setVille(activityInscription1Ville.getText().toString().trim());
+                    nv.setMail(activityInscription1Email.getText().toString().trim());
+                    if(activityInscription1Sexe.getSelectedItemPosition()==0)
+                        nv.setSexe("F");
+                    else
+                        nv.setSexe("M");
+                    if(activityInscription1Telephone.getText().toString().trim().isEmpty())
+                        nv.setTelephone(" ");
+                    else
+                        nv.setTelephone(activityInscription1Telephone.getText().toString().trim());
+
+                    Intent inscription2 = new Intent(this,Inscription2Activity.class);
+                    inscription2.putExtra("nouvelleLicence",nv);
+                    startActivityForResult(inscription2, Variable.REQUEST_CODE_SUIV);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
+                }
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == Variable.REQUEST_CODE_SUIV && resultCode == Variable.REQUEST_CODE_COMPLETE)
+        {
+            setResult(Variable.REQUEST_CODE_COMPLETE,data);
+            finish();
+            overridePendingTransition(R.anim.slide_out_left,R.anim.slide_out_right);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_out_left,R.anim.slide_out_right);
     }
 
 
