@@ -200,16 +200,18 @@ public class AjoutActivity extends ActionBarActivity implements View.OnClickList
             activityAjoutDesignation.setText(clubNouvelleLicence.getDesignation());
             activityAjoutDojoCompteur.setText(clubNouvelleLicence.getDojocode());
             activityAjoutAdresse.setText(clubNouvelleLicence.getAdresse());
-            activityAjoutCodePostal.setText(clubNouvelleLicence.getCp());
+            activityAjoutCodePostalChoisi.setText(clubNouvelleLicence.getCp());
             activityAjoutVille.setText(clubNouvelleLicence.getVille());
             activityAjoutValide.setVisibility(View.VISIBLE);
             activityAjoutDojo.setVisibility(View.VISIBLE);
 
             mRenouvellementAjoutLicence.addClubNouvelleLicence(clubNouvelleLicence);
         }
-        if(requestCode == Variable.REQUEST_CODE_SUIV && resultCode == Variable.REQUEST_CODE_COMPLETE)
+        if(requestCode == Variable.REQUEST_CODE_SUIV && resultCode == Variable.REQUEST_CODE_COMPLETE_AJOUT)
         {
-            setResult(Variable.REQUEST_CODE_COMPLETE_AJOUT);
+            Intent tmp = new Intent();
+            tmp.putExtra("test","test");
+            setResult(Variable.REQUEST_CODE_COMPLETE_AJOUT,tmp);
             finish();
             overridePendingTransition(R.anim.slide_fix,R.anim.slide_out_bottom);
         }

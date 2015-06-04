@@ -4,6 +4,17 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_inscription1">Inscription1Activity</string>
+    <string name="title_activity_inscription2">Inscription2Activity</string>
+    <string name="title_activity_licences">LicencesActivity</string>
+    <string name="title_activity_detail_licence">DetailLicenceActivity</string>
+    <string name="title_activity_renouvellement">RenouvellementActivity</string>
+    <string name="title_activity_inscription3">Inscription3Activity</string>
+    <string name="title_activity_code_postal">CodePostalActivity</string>
+    <string name="title_activity_historique_club">Historique Club</string>
+    <string name="title_activity_renouvellement_ajout">RenouvellementAjoutActivity</string>
+    <string name="title_activity_renouvellement_ajout2">RenouvellementAjout2Activity</string>
 
 
     <!-- Login activity text-->
@@ -22,10 +33,14 @@
     <string name="error_invalid_password">Le mot de passe est trop court</string>
     <string name="error_incorrect_password">Le mot de passe est incorrect</string>
     <string name="error_field_required">Le champ est requis</string>
+    <string name="envoyer">envoyer</string>
+    <string name="Envoyer">Envoyer</string>
+    <string name="ENVOYER">ENVOYER</string>
 
     <!-- Ma licence -->
     <string name="Ma_Licence">Ma Licence</string>
     <string name="Renouvellement">Renouveler ma licence</string>
+    <string name="Renouveler_licence">Renouveler ma licence</string>
 
     <!-- Mes licences -->
     <string name="Mes_Licences">Mes Licences</string>
@@ -33,7 +48,9 @@
 
     <!-- Inscription 1-2 -->
     <string name="Valider">Valider</string>
+    <string name="Telephone">Téléphone</string>
     <string name="Adresse">Adresse (*)</string>
+    <string name="Ville">Ville (*)</string>
     <string name="choix_club">Veuillez choisir un club dans la liste</string>
     <string name="saisie_nouvelle_licence">Saisie d\'une nouvelle licence</string>
     <string name="__saisie_nouvelle_licence">SAISIE D\'UNE NOUVELLE LICENCE</string>
@@ -90,6 +107,10 @@
     <string name="recuperation_club">Récupération du club actuel ...</string>
     <string name="Inscription_effectuee">Inscription Effectuée</string>
     <string name="Inscription_effectuee_desc">Votre inscription a bien été prise en compte, vous avez dû recevoir un mail à l\'adresse suivante : %1$s. De plus, vous pouvez vous rendre directement dans votre club pour prendre contact avec le professeur.</string>
+    <string name="renouvellement_effectuee">Renouvellement effectué</string>
+    <string name="renouvellement_effectuee_desc">Le renouvellement de la licence a bien été pris en compte, vous avez dû recevoir un mail de confirmation. De plus, vous pouvez vous rendre directement dans votre club pour prendre contact avec le professeur.</string>
+    <string name="Ajout_effectuee">Ajout de Licence effectué</string>
+    <string name="Ajout_effectuee_desc">L\'ajout de la licence a bien été pris en compte, vous avez dû recevoir un mail de confirmation. De plus, vous pouvez vous rendre directement dans votre club pour prendre contact avec le professeur.</string>
     <string name="Inscription_echec">Erreur inscription</string>
     <string name="Inscription_erreur_desc">Il semble que vous avez déjà procédé à une inscription/renouvellement dans cette discpline pour l\'année en cours.</string>
 
@@ -102,4 +123,55 @@
     <string name="etape_1_2">Etape 1/2</string>
     <string name="etape_2_2">Etape 2/2</string>
     <string name="Ajout_licence">Ajout d\'une licence</string>
+
+    <!-- Histo club -->
+    <string name="Arrivee">Arrivée</string>
+    <string name="Depart">Départ</string>
+    <string name="Arrivee_">Arrivée :</string>
+    <string name="Depart_">Départ :</string>
+
+    <!-- Task Bar Text -->
+    <string name="accueil">Accueil</string>
+    <string name="licence">Licence</string>
+    <string name="objectif">Objectifs</string>
+    <string name="calendrier">Calendrier</string>
+
+    <!-- Dialog when connection is ok -->
+    <string name="bienvenu">Bienvenue</string>
+    <string name="connexion_ok">Vous êtes connecté sur l\'application de la FFJDA</string>
+
+    <!-- Dialog when we aren't connected -->
+    <string name="attention">Attention !</string>
+    <string name="ok">OK</string>
+    <string name="erreur_connexion">Vous devez vous connecter pour accéder à cette partie de l\'application.</string>
+    <string name="no_connexion_at_login">Pour vous connecter vous devez disposer d\'une connexion internet</string>
+    <string name="no_connexion">Pour accéder à cette partie de l\'application, vous devez disposer d\'une connexion internet.</string>
+
+    <!-- Caledat fragment Text -->
+    <string name="calendar_type">TYPE</string>
+    <string name="calendar_categorie">CATEGORIE D\'AGE</string>
+    <string name="calendar_a_partir">A PARTIR DE</string>
+    <string name="calendar_jusqua">JUSQU\'AU</string>
+
+    <!-- Task Bar Text -->
+    <string name="FFJ">Fédération Française de \nJudo</string>
+    <string name="acceuil_naviguer">Naviguer directement sur notre site</string>
+    <string name="boutique">Boutique</string>
+    <string name="acceuil_nouveautes">Les dernières nouveautés\nn\'attendent que vous</string>
+    <string name="acceuil_judomag">Retrouvez\nchaque mois\nvotre magazine\npréféré	</string>
+
+    <!-- licence static test -->
+    <string name="nee_le">Né(e) le :</string>
+    <!-- Parcours fragment text -->
+    <string name="Saison_en_cours">Saison en cours</string>
+    <string name="Saison_precedentes">Saison précédentes</string>
+    <string name="phone_missing">Le numéro de téléphone ne nous est pas fournis.</string>
+
+    <!-- Detail competition fragment text -->
+    <string name="contact">Contact :</string>
+
+    <!-- Top Task Bar -->
+    <string name="Annuler">Annuler</string>
+    <string name="Retour">Retour</string>
+    <string name="Parcours">Parcours</string>
 </resources>

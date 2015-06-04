@@ -48,8 +48,8 @@
         </activity>
         <activity
             android:name=".views.LicencesActivity"
-            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_licences"
+            android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" >
         </activity>
         <activity
@@ -92,15 +92,21 @@
 
         <activity
             android:name=".views.HistoriqueClubActivity"
-            android:label="@string/title_activity_historique_club" >
+            android:label="@string/title_activity_historique_club"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".views.AjoutActivity"
-            android:label="@string/title_activity_renouvellement_ajout" >
+            android:label="@string/title_activity_renouvellement_ajout"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".views.RenouvellementAjout2Activity"
-            android:label="@string/title_activity_renouvellement_ajout2" >
+            android:label="@string/title_activity_renouvellement_ajout2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

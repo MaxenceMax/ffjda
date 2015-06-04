@@ -160,7 +160,9 @@ public class RenouvellementAjout2Activity extends ActionBarActivity implements V
      *
      */
     private void endActivityAjout() {
-        setResult(Variable.REQUEST_CODE_COMPLETE_AJOUT);
+        Intent tmp = new Intent();
+        tmp.putExtra("test","test");
+        setResult(Variable.REQUEST_CODE_COMPLETE_AJOUT,tmp);
         finish();
     }
 
@@ -222,7 +224,7 @@ public class RenouvellementAjout2Activity extends ActionBarActivity implements V
                 // http client
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 //url with the post data
-                HttpPost httpost = new HttpPost(Variable.jsonUrlPostNouvelleLicence);
+                HttpPost httpost = new HttpPost(Variable.jsonUrlRequestRenouvellement);
                 JSONObject user = new JSONObject();
                 user.put("clubcompteur", mNouvelleLicence.getClub_compteur());
                 user.put("dojocompteur",mNouvelleLicence.getDojo_compteur());
@@ -247,8 +249,9 @@ public class RenouvellementAjout2Activity extends ActionBarActivity implements V
                 System.out.println("Statut code : "+response.getStatusLine().getStatusCode());
                 result = convertStreamToString(response.getEntity().getContent());
                 System.out.println("Result"+result);
-                if(!result.equals("YES"))
+                if(!result.equals("\"YES\"")) {
                     return false;
+                }
             }catch(Exception e)
             {
                 e.printStackTrace();

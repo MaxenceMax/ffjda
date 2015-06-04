@@ -14,6 +14,7 @@ public class Variable {
 	public static String jsonUrlRequestCodePostal = "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/codepostal/";
 	public static String jsonUrlPostNouvelleLicence = "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/nouveaulicencie";
 	public static String jsonUrlRequestLastClub ="http://www.ffjda.org/ws_mobile/webRestGet/service.svc/dernierclub/";
+	public static String jsonUrlRequestRenouvellement="http://www.ffjda.org/ws_mobile/webRestGet/service.svc/renouvellement";
 	public static String jsonUrlRequestCompetitionThisYear = "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/infosInscriptionCoursJson/";
 	public static String jsonUrlRequestCompetitionForYear= "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/infosInscriptionJson/";
 

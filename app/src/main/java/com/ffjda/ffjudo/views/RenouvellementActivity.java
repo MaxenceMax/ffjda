@@ -188,7 +188,7 @@ public class RenouvellementActivity extends ActionBarActivity implements View.On
         activityRenouvellementDesignation.setText(clubNouvelleLicence.getDesignation());
         activityRenouvellementDojoCompteur.setText(clubNouvelleLicence.getDojocode());
         activityRenouvellementAdresse.setText(clubNouvelleLicence.getAdresse());
-        activityRenouvellementCodePostal.setText(clubNouvelleLicence.getCp());
+        activityRenouvellementCodePostalChoisi.setText(clubNouvelleLicence.getCp());
         activityRenouvellementVille.setText(clubNouvelleLicence.getVille());
         activityRenouvellementValide.setVisibility(View.VISIBLE);
         activityRenouvellementDojo.setVisibility(View.VISIBLE);
@@ -204,9 +204,11 @@ public class RenouvellementActivity extends ActionBarActivity implements View.On
             clubNouvelleLicence =(ClubNouvelleLicence)data.getSerializableExtra("club");
             setClub();
         }
-        if(requestCode == Variable.REQUEST_CODE_SUIV && resultCode == Variable.REQUEST_CODE_COMPLETE)
+        if(requestCode == Variable.REQUEST_CODE_SUIV && resultCode == Variable.REQUEST_CODE_COMPLETE_AJOUT)
         {
-            setResult(Variable.REQUEST_CODE_COMPLETE_AJOUT);
+            Intent tmp = new Intent();
+            tmp.putExtra("test","test");
+            setResult(Variable.REQUEST_CODE_COMPLETE_AJOUT,tmp);
             finish();
             overridePendingTransition(R.anim.slide_fix,R.anim.slide_out_bottom);
         }

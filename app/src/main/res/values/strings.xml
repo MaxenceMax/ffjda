@@ -112,7 +112,7 @@
     <string name="Inscription_effectuee_desc">Votre inscription a bien été prise en compte, vous avez dû recevoir un mail à l\'adresse suivante : %1$s. De plus, vous pouvez vous rendre directement dans votre club pour prendre contact avec le professeur.</string>
     <string name="Ajout_effectuee">Ajout de Licence effectué</string>
     <string name="Ajout_effectuee_desc">L\'ajout de la licence a bien été pris en compte, vous avez dû recevoir un mail de confirmation. De plus, vous pouvez vous rendre directement dans votre club pour prendre contact avec le professeur.</string>
-    <string name="renouvellement_effectuee">Ajout de Licence effectué</string>
+    <string name="renouvellement_effectuee">Renouvellement effectué</string>
     <string name="renouvellement_effectuee_desc">Le renouvellement de la licence a bien été pris en compte, vous avez dû recevoir un mail de confirmation. De plus, vous pouvez vous rendre directement dans votre club pour prendre contact avec le professeur.</string>
     <string name="Inscription_en_cours">Inscription en cours ...</string>
     <string name="recuperation_club">Récupération du club actuel ...</string>
