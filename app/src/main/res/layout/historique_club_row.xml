@@ -37,9 +37,9 @@
                         android:textColor="@color/blue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/Arrivee_"/>
+                        android:text="@string/Depart_"/>
                     <TextView
-                        android:id="@+id/historique_club_row_saison_arrivee"
+                        android:id="@+id/historique_club_row_saison_depart"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/blue"
                         android:textStyle="bold"
@@ -56,9 +56,9 @@
                         android:textColor="@color/blue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/Depart_"/>
+                        android:text="@string/Arrivee_"/>
                     <TextView
-                        android:id="@+id/historique_club_row_saison_depart"
+                        android:id="@+id/historique_club_row_saison_arrivee"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/blue"
                         android:textStyle="bold"

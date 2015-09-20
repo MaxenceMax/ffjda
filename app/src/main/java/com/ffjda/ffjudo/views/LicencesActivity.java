@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,14 +26,13 @@ import com.ffjda.ffjudo.utils.Variable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LicencesActivity extends ActionBarActivity implements View.OnClickListener, AdapterView.OnItemClickListener{
+public class LicencesActivity extends FfjdaActionBar implements View.OnClickListener, AdapterView.OnItemClickListener{
 
     // View items
     RelativeLayout mAddLicenceRelativeLayout;
     private TextView mNomTextView;
     private TextView mNumlicenceTextView;
     private Licencie mCurrentLicencie;
-    private TextView mDeconnexionTextView;
 
 
     // Usefull item for list view
@@ -45,8 +45,8 @@ public class LicencesActivity extends ActionBarActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_licences);
+        super.onCreate(savedInstanceState);
 
         // View initialisation
         mAddLicenceRelativeLayout = (RelativeLayout) findViewById(R.id.activity_licences_add_licence);
@@ -55,9 +55,6 @@ public class LicencesActivity extends ActionBarActivity implements View.OnClickL
         mNomTextView = (TextView) findViewById(R.id.activity_licences_nom);
         mNumlicenceTextView = (TextView) findViewById(R.id.activity_licences_numlicence);
 
-        // Deconnexion attribution
-        mDeconnexionTextView = (TextView) findViewById(R.id.activity_licences_deconnexion);
-        mDeconnexionTextView.setOnClickListener(this);
 
         // Search the current licencie
         licencieInitialisation();
@@ -120,19 +117,6 @@ public class LicencesActivity extends ActionBarActivity implements View.OnClickL
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Do all things to deconnect current user
-     */
-    private void deconnexion()
-    {
-        SharedPreferences sharedPreferences = getSharedPreferences(Variable.FFJDAPREFERENCES, Context.MODE_PRIVATE);
-        sharedPreferences.edit().remove(Variable.PREFERENCELASTLOG).commit();
-        Intent loginIntent = new Intent(this, LoginActivity.class);
-        startActivity(loginIntent);
-        finish();
-        overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -144,10 +128,7 @@ public class LicencesActivity extends ActionBarActivity implements View.OnClickL
                 }
                 Intent intent = new Intent(this,AjoutActivity.class);
                 startActivityForResult(intent, Variable.REQUEST_CODE_SUIV);
-                overridePendingTransition(R.anim.slide_in_bottom,R.anim.slide_fix);
-                break;
-            case R.id.activity_licences_deconnexion:
-                deconnexion();
+                overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_fix);
                 break;
         }
     }
@@ -160,7 +141,15 @@ public class LicencesActivity extends ActionBarActivity implements View.OnClickL
                     getString(R.string.Ajout_effectuee),
                     getString(R.string.Ajout_effectuee_desc));
         }
+
+        if(requestCode == Variable.REQUEST_EXIT && resultCode==Variable.RESULT_EXIT)
+        {
+            finish();
+        }
+
     }
+
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id)
@@ -169,7 +158,7 @@ public class LicencesActivity extends ActionBarActivity implements View.OnClickL
         Intent detailLicence = new Intent(this,DetailLicenceActivity.class);
         detailLicence.putExtra("licence",lic);
         detailLicence.putExtra("licencie",mCurrentLicencie);
-        startActivity(detailLicence);
+        startActivityForResult(detailLicence, Variable.REQUEST_EXIT);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
     }
 }

@@ -53,6 +53,28 @@
     <string name="Ajout_licence">Ajout d\'une licence</string>
     <string name="Renouvellement">Renouveler ma licence</string>
 
+    <!-- Creation compte licencie -->
+    <string name="Creation_compte_licencie">Création du compte licencié</string>
+    <string name="Numéro_de_licence">Numéro de licence</string>
+    <string name="clé_exemple">Clé (voir ci dessous)</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- Partenaires -->
+    <string name="Nos_partenaires">Nos partenaires</string>
+
+    <!-- A propos  -->
+    <string name="A_propos">A propos</string>
+
+    <!-- Vogo -->
+    <string name="Lancer">Lancer Vogo</string>
+    <string name="Vogo">Vogo Sports</string>
+    <string name="par_vogo">par Vogo</string>
+    <string name="Description">Description</string>
+    <string name="Description_1">VOGO Sport : Le deuxième écran de votre événement.</string>
+    <string name="Description_2">Lorsque vous êtes dans l\'enceinte de la compétition, connectez vous au réseau Wi-fi \"Vogo\", sélectionnez la caméra que souhaitez visionner.
+Visualisez le flux live ou revenez en arrière et revivez instantanément l\'action, soit en vitesse normale soit au ralenti.</string>
+
     <!-- Inscription 1-->
     <string name="Valider">Valider</string>
     <string name="choix_club">Veuillez choisir un club dans la liste</string>
@@ -167,6 +189,7 @@
     <!-- COLORS -->
     <color name="white_transparent">#00ffffff</color>
     <color name="white">#FFFFFF</color>
+    <color name="white_trans">#cceeeeee</color>
     <color name="blue_clear">#004a73</color>
     <color name="blue">#00304d</color>
     <color name="blue_pressed">#028ce0</color>
@@ -192,4 +215,9 @@
     <string name="Compte_licencie">Compte licencié</string>
     <string name="title_activity_renouvellement_ajout">RenouvellementAjoutActivity</string>
     <string name="title_activity_renouvellement_ajout2">RenouvellementAjout2Activity</string>
+    <string name="title_activity_compte_licencie_creation1">CompteLicencieCreation1</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_vogo">VogoActivity</string>
+    <string name="title_activity_partenaire">PartenaireActivity</string>
+    <string name="title_activity_apropos">AproposActivity</string>
 </resources>

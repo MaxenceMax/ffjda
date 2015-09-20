@@ -6,7 +6,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Variable {
-	
+
+	// menu definition
+	public final static String[] itemArray = { "Mes licences", "Site internet FFJudo", "Vidéo en direct \"Vogo\"","Partenaires","A propos","Déconnexion"};
+
 	// URL for json request
 	public static String jsonUrlRequestLogin = "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/connexion";
 	public static String jsonUrlRequestLicencie = "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/informations/";
@@ -35,6 +38,8 @@ public class Variable {
 	public static final int REQUEST_CODE_SUIV=2003;
 	public static final int REQUEST_CODE_COMPLETE=2004;
 	public static final int REQUEST_CODE_COMPLETE_AJOUT=2005;
+	public static final int REQUEST_EXIT=2006;
+	public static final int RESULT_EXIT=2007;
 
 	//Preferences items
 	public static final String PREFERENCENUMLIC = "numLic";

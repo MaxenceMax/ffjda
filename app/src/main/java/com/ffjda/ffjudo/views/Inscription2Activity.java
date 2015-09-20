@@ -105,7 +105,8 @@ public class Inscription2Activity extends ActionBarActivity implements View.OnCl
         int year1 = year+1;
         int year2 = year+2;
 
-        spinnerArray.add(year+"/"+year1);
+        if(calendar.get(Calendar.MONTH)<=5 && calendar.get(Calendar.MONTH)<8)
+            spinnerArray.add(year + "/" + year1);
         spinnerArray.add(year1 + "/" + year2);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(

@@ -4,7 +4,7 @@ import com.orm.SugarRecord;
 
 import java.io.Serializable;
 
-public class Licence extends SugarRecord<Licence> implements Serializable{
+public class Licence extends SugarRecord implements Serializable{
 
     private String discipline;
     private String discode;

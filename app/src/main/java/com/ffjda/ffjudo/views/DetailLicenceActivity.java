@@ -9,6 +9,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +30,9 @@ import com.onbarcode.barcode.android.Code128;
 import com.onbarcode.barcode.android.IBarcode;
 import com.onbarcode.barcode.android.QRCode;
 
-public class DetailLicenceActivity extends ActionBarActivity implements View.OnClickListener {
+import java.util.Calendar;
+
+public class DetailLicenceActivity extends FfjdaActionBar implements View.OnClickListener {
 
     // Object to displays
     private Licence mCurrentLicence;
@@ -53,8 +56,8 @@ public class DetailLicenceActivity extends ActionBarActivity implements View.OnC
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_licence);
+        super.onCreate(savedInstanceState);
 
         // Get object from intent
         mCurrentLicence = (Licence) getIntent().getSerializableExtra("licence");
@@ -77,6 +80,32 @@ public class DetailLicenceActivity extends ActionBarActivity implements View.OnC
 
         //Generate qrCode and Code 128
         codeGeneration();
+        // Check the date for the button
+        showRenouveller();
+
+    }
+
+
+    /**
+     * En fonction de la date test si on affiche ou non le bouton pour le renouvellement
+     */
+    private void showRenouveller()
+    {
+        Calendar c = Calendar.getInstance();
+        int month = c.get(Calendar.MONTH);
+
+        if(mCurrentLicence.getEstLicencie().equals("NO"))
+        {
+            mRenouvellementRelativeLayout.setVisibility(View.VISIBLE);
+        }
+        else if(mCurrentLicence.getEstLicencie().equals("YES"))
+        {
+            if(month >= 5 && month <8)
+            {
+                mRenouvellementRelativeLayout.setVisibility(View.VISIBLE);
+
+            }
+        }
 
     }
 

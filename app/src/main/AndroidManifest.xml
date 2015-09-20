@@ -48,8 +48,8 @@
         </activity>
         <activity
             android:name=".views.LicencesActivity"
-            android:label="@string/title_activity_licences"
             android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_licences"
             android:screenOrientation="portrait" >
         </activity>
         <activity
@@ -76,6 +76,48 @@
             android:label="@string/title_activity_code_postal"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name=".views.HistoriqueClubActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_historique_club"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.AjoutActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_renouvellement_ajout"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.RenouvellementAjout2Activity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_renouvellement_ajout2"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.CompteLicencieCreation1"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_compte_licencie_creation1"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.WebViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_web_view"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.VogoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_vogo"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".views.PartenaireActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_partenaire"
+            android:screenOrientation="portrait" >
+        </activity>
 
         <meta-data
             android:name="DATABASE"
@@ -91,22 +133,8 @@
             android:value="com.ffjda.ffjudo.model" />
 
         <activity
-            android:name=".views.HistoriqueClubActivity"
-            android:label="@string/title_activity_historique_club"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name=".views.AjoutActivity"
-            android:label="@string/title_activity_renouvellement_ajout"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name=".views.RenouvellementAjout2Activity"
-            android:label="@string/title_activity_renouvellement_ajout2"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait">
+            android:name=".views.AproposActivity"
+            android:label="@string/title_activity_apropos" >
         </activity>
     </application>
 

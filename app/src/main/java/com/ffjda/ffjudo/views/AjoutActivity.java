@@ -81,7 +81,6 @@ public class AjoutActivity extends ActionBarActivity implements View.OnClickList
         activityAjoutCodePostalValider.setOnClickListener(this);
     }
 
-
     /**
      * Spinner date initialisation
      */
@@ -91,7 +90,8 @@ public class AjoutActivity extends ActionBarActivity implements View.OnClickList
         int year1 = year+1;
         int year2 = year+2;
 
-        arraySaison.add(year+"/"+year1);
+        if(calendar.get(Calendar.MONTH)<=5 && calendar.get(Calendar.MONTH)<8)
+            arraySaison.add(year + "/" + year1);
         arraySaison.add(year1 + "/" + year2);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
@@ -100,7 +100,6 @@ public class AjoutActivity extends ActionBarActivity implements View.OnClickList
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         activityAjoutSaison.setAdapter(adapter);
     }
-
     private void licencieInitialisation()
     {
         licencie = (Licencie) Licencie.listAll(Licencie.class).get(0);

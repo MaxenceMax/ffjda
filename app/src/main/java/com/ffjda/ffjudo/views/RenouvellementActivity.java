@@ -169,7 +169,8 @@ public class RenouvellementActivity extends ActionBarActivity implements View.On
         int year1 = year+1;
         int year2 = year+2;
 
-        arraySaison.add(year + "/" + year1);
+        if(calendar.get(Calendar.MONTH)<=5 && calendar.get(Calendar.MONTH)<8)
+            arraySaison.add(year + "/" + year1);
         arraySaison.add(year1 + "/" + year2);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(

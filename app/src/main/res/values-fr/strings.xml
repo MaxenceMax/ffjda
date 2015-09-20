@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">FFJudo</string>
+    <string name="drawer_open">Ouvrir menu de navigation</string>
+    <string name="drawer_close">Fermer menu de navigation</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -16,6 +18,15 @@
     <string name="title_activity_renouvellement_ajout">RenouvellementAjoutActivity</string>
     <string name="title_activity_renouvellement_ajout2">RenouvellementAjout2Activity</string>
 
+
+    <!-- Vogo -->
+    <string name="Lancer">Lancer Vogo</string>
+    <string name="Vogo">Vogo Sports</string>
+    <string name="par_vogo">par Vogo</string>
+    <string name="Description">Description</string>
+    <string name="Description_1">VOGO Sport : Le deuxième écran de votre événement.</string>
+    <string name="Description_2">Lorsque vous êtes dans l\'enceinte de la compétition, connectez vous au réseau Wi-fi \"Vogo\", sélectionnez la caméra que souhaitez visionner.
+Visualisez le flux live ou revenez en arrière et revivez instantanément l\'action, soit en vitesse normale soit au ralenti.</string>
 
     <!-- Login activity text-->
     <string name="login">Identifiant</string>
@@ -45,6 +56,11 @@
     <!-- Mes licences -->
     <string name="Mes_Licences">Mes Licences</string>
     <string name="Deconnexion">Déconnexion</string>
+
+    <!-- Creation compte licencie -->
+    <string name="Creation_compte_licencie">Création du compte licencié</string>
+    <string name="Numéro_de_licence">Numéro de licence</string>
+    <string name="clé_exemple">Clé (voir ci dessous)</string>
 
     <!-- Inscription 1-2 -->
     <string name="Valider">Valider</string>

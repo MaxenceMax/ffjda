@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by maxence on 27/05/15.
  */
-public class Licencie extends SugarRecord<Licencie> implements Serializable{
+public class Licencie extends SugarRecord implements Serializable{
 
     private String nom;
     private String prenom;

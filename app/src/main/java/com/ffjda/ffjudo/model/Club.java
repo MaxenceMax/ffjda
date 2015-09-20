@@ -2,7 +2,7 @@ package com.ffjda.ffjudo.model;
 
 import com.orm.SugarRecord;
 
-public class Club extends SugarRecord<Club> {
+public class Club extends SugarRecord {
 	
 	private String nomClub;
 	private String anneeIn;

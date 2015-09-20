@@ -8,6 +8,7 @@
       <item name="windowActionBar">true</item>
       <item name="android:windowFullscreen">true</item>
       <item name="android:windowContentOverlay">@null</item>
+      <item name="android:typeface">serif</item>
 
     <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
     <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right</item>

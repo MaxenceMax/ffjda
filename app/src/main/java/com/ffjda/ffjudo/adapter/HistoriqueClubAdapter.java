@@ -75,12 +75,12 @@ public class HistoriqueClubAdapter extends ArrayAdapter<Club> {
         tmp = (club.getAnneeOut().split("/"))[0];
         int out = Integer.parseInt(tmp);
         int result = out -in ;
-        if(result==0 || result == 1)
-            mHistoInformation.yearLabel.setText("an");
-        else
+        mHistoInformation.yearLabel.setText("an");
+        if(result>0)
             mHistoInformation.yearLabel.setText("ans");
-        if (result==0)
-            result++;
+        result++;
+
+
 
         mHistoInformation.year.setText(""+result);
 

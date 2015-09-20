@@ -225,7 +225,14 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                 attemptLogin();
                 break;
             case R.id.activity_login_pas_compte:
-                DialogCreation.createDialog(this,getString(R.string.Compte_licencie),getString(R.string.Compte_licencie_explain));
+                if(!CheckConnection.isNetworkAvailable(this))
+                {
+                    Utils.showAlertNoConnexion(this);
+                    return;
+                }
+                Intent creationIntentn = new Intent(this,CompteLicencieCreation1.class);
+                startActivityForResult(creationIntentn, Variable.REQUEST_CODE_SUIV);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
                 break;
         }
     }
