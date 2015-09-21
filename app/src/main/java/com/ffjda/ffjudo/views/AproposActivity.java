@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.ffjda.ffjudo.R;
 
-public class AproposActivity extends ActionBarActivity {
+public class AproposActivity extends FfjdaActionBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

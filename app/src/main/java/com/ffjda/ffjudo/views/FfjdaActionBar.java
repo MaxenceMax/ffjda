@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.ffjda.ffjudo.R;
 import com.ffjda.ffjudo.utils.CheckConnection;
+import com.ffjda.ffjudo.utils.TypefaceUtil;
 import com.ffjda.ffjudo.utils.Utils;
 import com.ffjda.ffjudo.utils.Variable;
 

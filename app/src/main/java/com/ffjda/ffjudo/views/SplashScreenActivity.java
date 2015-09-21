@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.ffjda.ffjudo.R;
+import com.ffjda.ffjudo.utils.TypefaceUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -17,6 +18,8 @@ public class SplashScreenActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/San_fransisco.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
 
         runOnUiThread(new Runnable() {
             @Override
