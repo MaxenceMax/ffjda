@@ -41,46 +41,112 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:background="@color/white"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_below="@id/activity_apropos_view_top">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="260dp"
+                            android:layout_height="wrap_content"
                             android:background="@color/blue">
+                            <TextView
+                                android:textSize="25dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:textColor="@color/white"
+                                android:text="@string/A_propos"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"/>
+                        </RelativeLayout>
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:src="@drawable/picto_arrow_down"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textColor="@color/blue"
+                            android:textSize="15dp"
+                            android:gravity="center"
+                            android:text="@string/Federation_nom"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textColor="@color/blue"
+                            android:textSize="15dp"
+                            android:text="@string/Federation_adresse"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/red_fede">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="10dp"
                                 android:src="@drawable/picto_arrow_white"/>
                             <TextView
                                 android:textSize="25dp"
+                                android:gravity="center"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentTop="true"
                                 android:textColor="@color/white"
-                                android:text="@string/A_propos"
-                                android:layout_marginTop="22dp"
-                                android:layout_marginBottom="20dp"/>
-                            <TextView
-                                android:textSize="25dp"
-                                android:text="@string/A_propos"
-                                android:layout_width="match_parent"
-                                android:layout_alignParentBottom="true"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_marginTop="22dp"
-                                android:layout_marginBottom="20dp"/>
+                                android:text="@string/Votre_avis"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="8dp"/>
                         </RelativeLayout>
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
-                            android:src="@drawable/picto_arrow_down"/>
+                            android:src="@drawable/picto_arrow_down_red"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textColor="@color/blue"
+                            android:textSize="15dp"
+                            android:text="@string/avis_a_propos"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textColor="@color/blue"
+                            android:textSize="15dp"
+                            android:gravity="center"
+                            android:text="@string/Merci_et"/>
+                        <RelativeLayout
+                            android:id="@+id/activity_aprops_envoyer_mail"
+                            android:layout_width="match_parent"
+                            android:background="@drawable/blue_layout_clickable"
+                            android:clickable="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:text="@string/envoyer_mail"/>
+                        </RelativeLayout>
                     </LinearLayout>
-
                 </RelativeLayout>
             </RelativeLayout>
             <ListView

@@ -8,7 +8,9 @@ import java.util.List;
 public class Variable {
 
 	// menu definition
-	public final static String[] itemArray = { "Mes licences", "Site internet FFJudo", "Vidéo en direct \"Vogo\"","Partenaires","A propos","Déconnexion"};
+	public final static String[] itemArray = { "Mes licences", "Site FFJudo", "Live","Partenaires","A propos","Déconnexion"};
+
+	public final static String YOUTUBEKEY = "AIzaSyDtH4im3XsaiGNWDkelUxpYe3FI_58Utyw";
 
 	// URL for json request
 	public static String jsonUrlRequestLogin = "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/connexion";
@@ -20,6 +22,9 @@ public class Variable {
 	public static String jsonUrlRequestRenouvellement="http://www.ffjda.org/ws_mobile/webRestGet/service.svc/renouvellement";
 	public static String jsonUrlRequestCompetitionThisYear = "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/infosInscriptionCoursJson/";
 	public static String jsonUrlRequestCompetitionForYear= "http://www.ffjda.org/ws_mobile/webRestGet/service.svc/infosInscriptionJson/";
+
+	// Mail address for bug
+	public static String MAILBUG ="appffjda@ffjudo.com";
 
 	//Url for inscription
 	public static String URLCONDITION ="http://www.ffjda.org/zelic/conditions/notice_assurance_suiv.htm";

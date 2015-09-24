@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context="com.ffjda.ffjudo.views.PartenaireActivity">
 
     <!--Navigation drawer -->
@@ -37,52 +38,182 @@
                         android:src="@drawable/bandeau_ffjda"/>
                 </LinearLayout>
             </LinearLayout>
-            <RelativeLayout
+            <ScrollView
+                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
-                android:background="@color/white"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/activity_partenaire_view_top">
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:background="@color/white"
+                    android:layout_height="match_parent">
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="260dp"
-                        android:background="@color/blue">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/activity_partenaire_titre_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/blue">
+                            <TextView
+                                android:textSize="25dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/Nos_partenaires"
+                                android:textColor="@color/white"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"/>
+                        </LinearLayout>
+                        <WebView
+                            android:background="@android:color/white"
+                            android:id="@+id/activity_partenaire_webview1"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_below="@+id/activity_partenaire_titre_view"/>
                         <ImageView
+                            android:layout_below="@+id/activity_partenaire_webview1"
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
-                            android:src="@drawable/picto_arrow_white"/>
-                        <TextView
-                            android:textSize="25dp"
+                            android:layout_marginTop="-10dp"
+                            android:src="@drawable/picto_arrow_up_blue"/>
+                        <LinearLayout
+                            android:id="@+id/activity_partenaire_mazda"
+                            android:layout_below="@+id/activity_partenaire_webview1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:text="@string/Nos_partenaires"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="22dp"
-                            android:layout_marginBottom="20dp"/>
-                        <TextView
-                            android:textSize="25dp"
+                            android:orientation="vertical"
+                            android:background="@color/blue">
+                            <TextView
+                                android:textSize="15dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/Mazda_vous_presente"
+                                android:textColor="@color/white"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"/>
+                        </LinearLayout>
+                        <WebView
+                            android:background="@android:color/white"
+                            android:id="@+id/activity_partenaire_webview2"
                             android:layout_width="match_parent"
-                            android:layout_alignParentBottom="true"
+                            android:layout_height="150dp"
+                            android:layout_below="@+id/activity_partenaire_mazda"/>
+                        <ImageView
+                            android:layout_below="@+id/activity_partenaire_mazda"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:src="@drawable/picto_arrow_down"/>
+                        <LinearLayout
+                            android:id="@+id/activity_partenaire_mais_aussi"
+                            android:layout_below="@+id/activity_partenaire_webview2"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:fontFamily=""
-                            android:text="@string/Nos_partenaires"
-                            android:textColor="@color/white"
-                            android:layout_marginTop="22dp"
-                            android:layout_marginBottom="20dp"/>
+                            android:orientation="vertical"
+                            android:background="@color/red_fede">
+                            <TextView
+                                android:textSize="15dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/Mais_aussi"
+                                android:textColor="@color/white"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/activity_partenaire_mais_aussi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="25dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/equipe_logo"/>
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/mazda_logo"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/smi_logo"/>
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="20dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/tissot_logo"/>
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/adidas_logo"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/rmc_logo"/>
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/campanile_logo"/>
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/lcl_logo"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_below="@+id/activity_partenaire_mais_aussi"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:src="@drawable/picto_arrow_down_red"/>
                     </RelativeLayout>
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:src="@drawable/picto_arrow_down"/>
-                </LinearLayout>
-
-            </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
         </RelativeLayout>
+        <FrameLayout
+            android:id="@+id/customViewContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            />
         <ListView
             android:id="@+id/navList"
             android:layout_width="240dp"

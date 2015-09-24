@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 
 import com.ffjda.ffjudo.R;
 import com.vogo.vgplayerlib.MainPlayer;
+//import com.vogo.vgplayerlib.MainPlayer;
 
 public class VogoActivity extends FfjdaActionBar implements View.OnClickListener{
 

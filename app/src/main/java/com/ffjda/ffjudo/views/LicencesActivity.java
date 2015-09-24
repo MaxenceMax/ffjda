@@ -20,6 +20,7 @@ import com.ffjda.ffjudo.model.Licence;
 import com.ffjda.ffjudo.model.Licencie;
 import com.ffjda.ffjudo.utils.CheckConnection;
 import com.ffjda.ffjudo.utils.DialogCreation;
+import com.ffjda.ffjudo.utils.TypefaceUtil;
 import com.ffjda.ffjudo.utils.Utils;
 import com.ffjda.ffjudo.utils.Variable;
 

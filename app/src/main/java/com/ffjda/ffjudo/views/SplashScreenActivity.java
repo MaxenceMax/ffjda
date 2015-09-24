@@ -19,7 +19,7 @@ public class SplashScreenActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/San_fransisco.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
+        TypefaceUtil.overrideFont(getApplicationContext(), "MONOSPACE", "fonts/San_fransisco.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
 
         runOnUiThread(new Runnable() {
             @Override
@@ -55,7 +55,7 @@ public class SplashScreenActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the Home/Up button, so long&
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 

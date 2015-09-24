@@ -171,6 +171,12 @@ public class FfjdaActionBar extends Activity {
                         finish();
                         break;
                     case 3:
+
+                        if(!CheckConnection.isNetworkAvailable(getLocalContext()))
+                        {
+                            Utils.showAlertNoConnexion(getLocalContext());
+                            return;
+                        }
                         Intent partenaires = new Intent(getLocalContext(),PartenaireActivity.class);
                         startActivity(partenaires);
                         setResult(Variable.RESULT_EXIT, null);
@@ -218,8 +224,11 @@ public class FfjdaActionBar extends Activity {
 
             ObjectDrawerItem folder = data[position];
 
-
             imageViewIcon.setImageResource(folder.icon);
+            if(position == data.length-1)
+            {
+                textViewName.setTextColor(getResources().getColorStateList(R.color.red_text_clickable));
+            }
             textViewName.setText(folder.name);
 
             return listItem;

@@ -18,6 +18,15 @@
     <string name="title_activity_renouvellement_ajout">RenouvellementAjoutActivity</string>
     <string name="title_activity_renouvellement_ajout2">RenouvellementAjout2Activity</string>
 
+    <!-- A propos -->
+    <string name="A_propos">A propos</string>
+    <string name="Federation_nom">FEDERATION FRANCAISE DE JUDO JUJITSU, KENDO et DISCIPLINES ASSOCIEES (FFJDA)</string>
+    <string name="Federation_adresse">Association déclarée, conformément à la loi du 1er juillet 1901 modifiée et reconnue, comme établissement d\’utilité publique dont le siège est situé 21/25 avenue de la Porte de Châtillon – 75014 PARIS. 01.40.52.16.16.</string>
+    <string name="Votre_avis">Votre avis</string>
+    <string name="avis_a_propos">Si vous rencontrez un problème avec l\'application ou que vous avez des idées à nous soumettre, n\'hésitez pas à nous écrire, nous en tiendrons compte.</string>
+    <string name="Merci_et">Merci et Hadjime.</string>
+    <string name="envoyer_mail">Envoyer un mail</string>
+    <string name="mail_subject">Remarque/Bug sur l\'application</string>
 
     <!-- Vogo -->
     <string name="Lancer">Lancer Vogo</string>
@@ -134,6 +143,10 @@ Visualisez le flux live ou revenez en arrière et revivez instantanément l\'act
     <string name="yes">Oui</string>
     <string name="no">Non</string>
 
+    <!-- Partenaires -->
+    <string name="Nos_partenaires">Nos partenaires</string>
+    <string name="Mazda_vous_presente">Mazda vous présente</string>
+    <string name="Mais_aussi">Mais aussi</string>
 
     <!-- Ajout nouvelle licence -->
     <string name="etape_1_2">Etape 1/2</string>
