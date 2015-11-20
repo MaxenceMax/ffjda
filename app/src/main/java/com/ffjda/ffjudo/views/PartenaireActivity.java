@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -73,7 +74,6 @@ public class PartenaireActivity extends FfjdaActionBar {
         webView1.setWebChromeClient(mWebChromeClient1);
         webView1.getSettings().setJavaScriptEnabled(true);
         webView1.getSettings().setDisplayZoomControls(false);
-        webView1.getSettings().setBuiltInZoomControls(true);
         webView1.getSettings().setAppCacheEnabled(true);
         webView1.getSettings().setBuiltInZoomControls(true);
         webView1.getSettings().setSaveFormData(true);
@@ -86,7 +86,6 @@ public class PartenaireActivity extends FfjdaActionBar {
         webView2.setWebChromeClient(mWebChromeClient2);
         webView2.getSettings().setJavaScriptEnabled(true);
         webView2.getSettings().setDisplayZoomControls(false);
-        webView2.getSettings().setBuiltInZoomControls(true);
         webView2.getSettings().setAppCacheEnabled(true);
         webView2.getSettings().setBuiltInZoomControls(true);
         webView2.getSettings().setSaveFormData(true);
@@ -122,6 +121,19 @@ public class PartenaireActivity extends FfjdaActionBar {
             hideCustomView();
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+            if (inCustomView()) {
+                hideCustomView();
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 
     public boolean inCustomView() {
         return (mCustomView != null);

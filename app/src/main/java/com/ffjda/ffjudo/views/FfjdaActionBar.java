@@ -53,13 +53,25 @@ public class FfjdaActionBar extends Activity {
         setupDrawer();
 
         // Navlist initialisation
-        ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[6];
+        // With exception on the login screen to hid deconnexion from menu
+        SharedPreferences sharedPreferences = getSharedPreferences(Variable.FFJDAPREFERENCES, Context.MODE_PRIVATE);
+        ObjectDrawerItem[] drawerItem;
+        if(sharedPreferences.contains(Variable.PREFERENCELASTLOG))
+        {
+            drawerItem = new ObjectDrawerItem[6];
+        }else
+        {
+            drawerItem = new ObjectDrawerItem[5];
+        }
         drawerItem[0] = new ObjectDrawerItem(R.drawable.identity_card_icon_focusable, Variable.itemArray[0]);
         drawerItem[1] = new ObjectDrawerItem(R.drawable.browser_icon_focusable, Variable.itemArray[1]);
         drawerItem[2] = new ObjectDrawerItem(R.drawable.camera_icon_focusable, Variable.itemArray[2]);
         drawerItem[3] = new ObjectDrawerItem(R.drawable.partner_icon_focusable, Variable.itemArray[3]);
         drawerItem[4] = new ObjectDrawerItem(R.drawable.information_icon_focusable, Variable.itemArray[4]);
-        drawerItem[5] = new ObjectDrawerItem(R.drawable.cross_icon_focusable, Variable.itemArray[5]);
+        if(sharedPreferences.contains(Variable.PREFERENCELASTLOG))
+        {
+            drawerItem[5] = new ObjectDrawerItem(R.drawable.cross_icon_focusable, Variable.itemArray[5]);
+        }
 
 
 
@@ -143,11 +155,19 @@ public class FfjdaActionBar extends Activity {
         adapter = new DrawerItemCustomAdapter(this, R.layout.navlist_item_row, objects);
         mDrawerList.setAdapter(adapter);
 
+        // Peference to check if the user is connected
+        final SharedPreferences sharedPreferences = getSharedPreferences(Variable.FFJDAPREFERENCES, Context.MODE_PRIVATE);
+
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
+                        if(!sharedPreferences.contains(Variable.PREFERENCELASTLOG))
+                        {
+                            Utils.showAlertNotConnected(getLocalContext());
+                            return;
+                        }
                         Intent licences = new Intent(getLocalContext(),LicencesActivity.class);
                         startActivity(licences);
                         setResult(Variable.RESULT_EXIT, null);
@@ -165,13 +185,17 @@ public class FfjdaActionBar extends Activity {
                         finish();
                         break;
                     case 2:
+                        if(!sharedPreferences.contains(Variable.PREFERENCELASTLOG))
+                        {
+                            Utils.showAlertNotConnected(getLocalContext());
+                            return;
+                        }
                         Intent VogIntent = new Intent(getLocalContext(),VogoActivity.class);
                         startActivity(VogIntent);
                         setResult(Variable.RESULT_EXIT, null);
                         finish();
                         break;
                     case 3:
-
                         if(!CheckConnection.isNetworkAvailable(getLocalContext()))
                         {
                             Utils.showAlertNoConnexion(getLocalContext());
@@ -183,6 +207,11 @@ public class FfjdaActionBar extends Activity {
                         finish();
                         break;
                     case 4:
+                        if(!sharedPreferences.contains(Variable.PREFERENCELASTLOG))
+                        {
+                            Utils.showAlertNotConnected(getLocalContext());
+                            return;
+                        }
                         Intent apropos = new Intent(getLocalContext(),AproposActivity.class);
                         startActivity(apropos);
                         setResult(Variable.RESULT_EXIT, null);
@@ -225,7 +254,7 @@ public class FfjdaActionBar extends Activity {
             ObjectDrawerItem folder = data[position];
 
             imageViewIcon.setImageResource(folder.icon);
-            if(position == data.length-1)
+            if(position == data.length-1 && data.length>5)
             {
                 textViewName.setTextColor(getResources().getColorStateList(R.color.red_text_clickable));
             }
@@ -233,7 +262,6 @@ public class FfjdaActionBar extends Activity {
 
             return listItem;
         }
-
     }
 
     public class ObjectDrawerItem {

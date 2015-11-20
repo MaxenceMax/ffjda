@@ -1,16 +1,21 @@
 package com.ffjda.ffjudo.utils;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 
 import com.ffjda.ffjudo.R;
+import com.ffjda.ffjudo.views.LoginActivity;
 
 public class Utils {
 	
@@ -116,6 +121,46 @@ public class Utils {
 		AlertDialog dialog = builder.create();
 		// Launch the AlertDialog
 		dialog.show();
+	}
+
+	/**
+	 * Show a alert dialog, to notify user haven't internet connexion
+	 */
+	public static void showAlertNotConnected(final Context c)
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(c);
+		// Set the dialog characteristics
+		builder.setTitle(R.string.attention) .setMessage(R.string.not_connected);
+		// Add the buttons
+		builder.setPositiveButton(R.string.se_connecter,
+				new DialogInterface.OnClickListener()
+				{
+					public void onClick(DialogInterface dialog, int id) {
+						Intent login = new Intent(c, LoginActivity.class);
+						c.startActivity(login);
+						((Activity)c).finish();
+					}
+				});
+		builder.setNegativeButton(R.string.se_connecter_plus_tard,
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+					}
+				});
+		// Get the AlertDialog
+		final AlertDialog alert = builder.create();
+        alert.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button btnPositive = alert.getButton(Dialog.BUTTON_POSITIVE);
+                btnPositive.setTextSize(13);
+
+                Button btnNegative = alert.getButton(Dialog.BUTTON_NEGATIVE);
+                btnNegative.setTextSize(13);
+            }
+        });
+		// Launch the AlertDialog
+		alert.show();
 	}
 	
 	/**

@@ -23,7 +23,7 @@ public class WebViewActivity extends FfjdaActionBar {
         // Elements initialisation
         mWebView = (WebView) findViewById(R.id.activity_web_view_site);
 
-        mWebView.loadUrl("http://site2583.amenothes-port-55.nfrance.com");
+        mWebView.loadUrl("http://www.ffjudo.com");
 
         mWebView.setWebViewClient(new WebViewClient() {
             @Override

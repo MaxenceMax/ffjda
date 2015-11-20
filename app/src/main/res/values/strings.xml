@@ -166,6 +166,9 @@ Visualisez le flux live ou revenez en arrière et revivez instantanément l\'act
     <string name="erreur_connexion">Vous devez vous connecter pour accéder à cette partie de l\'application.</string>
     <string name="no_connexion_at_login">Pour vous connecter vous devez disposer d\'une connexion internet</string>
     <string name="no_connexion">Pour accéder à cette partie de l\'application, vous devez disposer d\'une connexion internet.</string>
+    <string name="not_connected">Pour accéder à cette partie de l\'application, vous devez vous connecter avec vos identifiants.</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="se_connecter_plus_tard">Se connecter plus tard</string>
 
     <!-- Caledat fragment Text -->
     <string name="calendar_type">TYPE</string>

@@ -34,6 +34,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -41,7 +42,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Calendar;
 
-public class LoginActivity extends ActionBarActivity implements View.OnClickListener{
+public class LoginActivity extends FfjdaActionBar implements View.OnClickListener{
 
     /**
      * The default email to populate the email field with.
@@ -71,11 +72,9 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_login);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
         //View initialization
-
-        setContentView(R.layout.activity_login);
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.activity_login_identifiant);
         mPasswordView = (EditText) findViewById(R.id.activity_login_password);
@@ -225,7 +224,9 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                 attemptLogin();
                 break;
             case R.id.activity_login_pas_compte:
-                if(!CheckConnection.isNetworkAvailable(this))
+                DialogCreation.createDialog(this,getString(R.string.Compte_licencie),getString(R.string.Compte_licencie_explain));
+                break;
+                /*if(!CheckConnection.isNetworkAvailable(this))
                 {
                     Utils.showAlertNoConnexion(this);
                     return;
@@ -233,7 +234,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                 Intent creationIntentn = new Intent(this,CompteLicencieCreation1.class);
                 startActivityForResult(creationIntentn, Variable.REQUEST_CODE_SUIV);
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
-                break;
+                break;*/
         }
     }
 
@@ -355,7 +356,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                     DefaultHttpClient httpclient = new DefaultHttpClient();
                     //j'appelle la requète avec l'url et le paramètre correct
                     HttpResponse response = httpclient.execute(new HttpGet(
-                        new String(Variable.jsonUrlRequestLicencie+params[0].replace("*", "@"))));
+                        new String(Variable.jsonUrlRequestLicencie+params[0].replace("*", "@").replace(" ", "§"))));
                     //affichage du status de retour !
                     System.out.println("Statut code : "+response.getStatusLine().getStatusCode());
                     // Et je check les résultats
@@ -384,10 +385,11 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                         licence.setDiscode(compJson.getString("discode").trim());
                         // Save histo
                         // Nouveau client pour la reuqte
+
                         DefaultHttpClient httpclientclub = new DefaultHttpClient();
                         //j'appelle la requète avec l'url et le paramètre correct
                         HttpResponse responseclub = httpclientclub.execute(new HttpGet(
-                            new String(Variable.jsonUrlRequestClub+licencie.getNum_licence()+"/"+compJson.getString("discode").trim())));
+                            new String(Variable.jsonUrlRequestClub+licencie.getNum_licence().replace("*", "@").replace(" ","§")+"/"+compJson.getString("discode").trim())));
                         String tmpClub = convertStreamToString(responseclub.getEntity().getContent());
                         System.out.println("club récupéré :"+tmpClub);
                         JSONObject objClub = new JSONObject(tmpClub);

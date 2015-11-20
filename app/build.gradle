@@ -8,8 +8,8 @@ android {
         applicationId "com.ffjda.ffjudo"
         minSdkVersion 17
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 7
+        versionName "2.0.5"
     }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
@@ -37,6 +37,6 @@ dependencies {
     compile 'com.github.satyan:sugar:1.4'
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile files('libs/OnBarcode.AndroidBarcode.jar')
-    compile(name: 'vgplayerlib', ext: 'aar')
+    compile(name: 'playerlib', ext: 'aar')
     compile files('libs/YouTubeAndroidPlayerApi.jar')
 }
